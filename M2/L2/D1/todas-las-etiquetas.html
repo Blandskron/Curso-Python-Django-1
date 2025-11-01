@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todas las etiquetas HTML5</title>
+</head>
+<body>
+
+  <!-- =================================== -->
+  <!-- SECCIÓN 1: ESTRUCTURA SEMÁNTICA -->
+  <!-- =================================== -->
+  <header>Encabezado del sitio</header>
+  <nav>Navegación principal</nav>
+  <main>
+    <section>
+      <article>
+        <h1>Título de artículo</h1>
+        <p>Contenido principal dentro de un artículo.</p>
+      </article>
+      <aside>Barra lateral o contenido complementario.</aside>
+    </section>
+  </main>
+  <footer>Pie de página del documento</footer>
+
+  <!-- =================================== -->
+  <!-- SECCIÓN 2: TEXTO Y FORMATO -->
+  <!-- =================================== -->
+  <h1>Título H1</h1>
+  <h2>Título H2</h2>
+  <h3>Título H3</h3>
+  <h4>Título H4</h4>
+  <h5>Título H5</h5>
+  <h6>Título H6</h6>
+
+  <p>Esto es un <b>texto en negrita</b>, <strong>importante</strong>, <i>en cursiva</i>, <em>enfatizado</em>,
+  <u>subrayado</u>, <s>tachado</s>, <mark>resaltado</mark>, <small>más pequeño</small>, <sup>superíndice</sup>, <sub>subíndice</sub>.</p>
+
+  <abbr title="Lenguaje de Marcado de Hipertexto">HTML</abbr><br>
+  <cite>Nombre de una obra</cite><br>
+  <code>let x = 10;</code><br>
+  <kbd>Ctrl + S</kbd><br>
+  <samp>Mensaje del sistema</samp><br>
+  <var>x</var><br>
+  <q>Esto es una cita corta</q>
+  <blockquote>Cita más larga en bloque.</blockquote>
+  <address>Contacto: contacto@ejemplo.com</address>
+  <time datetime="2025-11-01">1 de noviembre de 2025</time>
+  <br><br>
+
+  <!-- =================================== -->
+  <!-- SECCIÓN 3: LISTAS -->
+  <!-- =================================== -->
+  <ul>
+    <li>Elemento A</li>
+    <li>Elemento B</li>
+  </ul>
+
+  <ol>
+    <li>Paso 1</li>
+    <li>Paso 2</li>
+  </ol>
+
+  <dl>
+    <dt>HTML</dt>
+    <dd>Lenguaje de estructura web</dd>
+  </dl>
+
+  <!-- =================================== -->
+  <!-- SECCIÓN 4: ENLACES E IMÁGENES -->
+  <!-- =================================== -->
+  <a href="https://developer.mozilla.org/es/docs/Web/HTML">Enlace a MDN</a><br>
+  <img src="https://via.placeholder.com/100" alt="Ejemplo de imagen"><br>
+  <picture>
+    <source srcset="https://via.placeholder.com/200" media="(min-width:600px)">
+    <img src="https://via.placeholder.com/100" alt="Imagen adaptable">
+  </picture>
+  <figure>
+    <img src="https://via.placeholder.com/80" alt="Figura">
+    <figcaption>Pie de figura</figcaption>
+  </figure>
+
+  <!-- =================================== -->
+  <!-- SECCIÓN 5: MULTIMEDIA -->
+  <!-- =================================== -->
+  <audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <video controls width="200">
+    <source src="video.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+  </video>
+
+  <canvas id="miCanvas" width="100" height="100"></canvas>
+  <svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" fill="blue"></circle>
+  </svg>
+
+  <!-- =================================== -->
+  <!-- SECCIÓN 6: FORMULARIOS -->
+  <!-- =================================== -->
+  <form>
+    <fieldset>
+      <legend>Formulario básico</legend>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" type="text" name="nombre"><br>
+
+      <label for="correo">Correo:</label>
+      <input id="correo" type="email" name="correo"><br>
+
+      <input type="number" name="edad" min="0" max="100"><br>
+      <input type="password" name="clave"><br>
+      <input type="checkbox" name="acepto"> Acepto<br>
+      <input type="radio" name="opcion" value="1"> Uno
+      <input type="radio" name="opcion" value="2"> Dos<br>
+      <input type="color" name="color"><br>
+      <input type="date" name="fecha"><br>
+      <input type="range" name="rango" min="0" max="10"><br>
+      <input type="file" name="archivo"><br>
+      <textarea rows="2" cols="20">Texto aquí</textarea><br>
+      <select name="pais">
+        <option>Chile</option>
+        <option>Argentina</option>
+      </select><br>
+      <button type="submit">Enviar</button>
+      <button type="reset">Limpiar</button>
+      <datalist id="sugerencias">
+        <option value="HTML">
+        <option value="CSS">
+      </datalist>
+      <output>0</output>
+      <progress value="60" max="100"></progress>
+      <meter value="0.7">70%</meter>
+    </fieldset>
+  </form>
+
+  <!-- =================================== -->
+  <!-- SECCIÓN 7: TABLAS -->
+  <!-- =================================== -->
+  <table>
+    <caption>Ejemplo de tabla</caption>
+    <thead>
+      <tr><th>Nombre</th><th>Edad</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>María</td><td>25</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="2">Total: 1 persona</td></tr>
+    </tfoot>
+  </table>
+
+  <!-- =================================== -->
+  <!-- SECCIÓN 8: ELEMENTOS INTERACTIVOS -->
+  <!-- =================================== -->
+  <details>
+    <summary>Más información</summary>
+    <p>Contenido oculto dentro de details.</p>
+  </details>
+  <dialog open>Esto es un cuadro de diálogo</dialog>
+  <menu>
+    <menuitem label="Guardar"></menuitem>
+    <menuitem label="Imprimir"></menuitem>
+  </menu>
+
+  <!-- =================================== -->
+  <!-- SECCIÓN 9: EMBED, OBJECT, ETC -->
+  <!-- =================================== -->
+  <embed src="archivo.pdf" width="200" height="100">
+  <object data="archivo.pdf" type="application/pdf" width="200" height="100"></object>
+  <iframe src="https://example.com" width="200" height="100" title="Ejemplo"></iframe>
+
+  <!-- =================================== -->
+  <!-- SECCIÓN 10: SCRIPTS Y META -->
+  <!-- =================================== -->
+  <noscript>Tu navegador no soporta JavaScript</noscript>
+  <script>
+    console.log("Ejemplo de script");
+  </script>
+  <template>
+    <p>Esto está dentro de una plantilla.</p>
+  </template>
+  <slot>Contenido por defecto de slot (Web Components)</slot>
+
+</body>
+</html>

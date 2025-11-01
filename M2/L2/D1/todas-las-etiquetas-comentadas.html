@@ -1,0 +1,296 @@
+<!-- Indica que este documento usa la versión HTML5 -->
+<!DOCTYPE html>
+<!-- Raíz del documento HTML -->
+<html lang="es">
+  <!-- Contiene información que no se muestra directamente al usuario -->
+  <head>
+    <!-- Define la codificación de caracteres (UTF-8 soporta tildes y eñes) -->
+    <meta charset="UTF-8">
+    <!-- Permite que el sitio sea adaptable a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Todas las etiquetas HTML5 comentadas</title>
+  </head>
+
+  <!-- Contiene todo lo visible en la página -->
+  <body>
+
+    <!-- =================================== -->
+    <!-- ESTRUCTURA SEMÁNTICA -->
+    <!-- =================================== -->
+
+    <!-- Encabezado principal del sitio (puede incluir logo, título o menú) -->
+    <header>Encabezado del sitio</header>
+
+    <!-- Sección de navegación (menú, enlaces) -->
+    <nav>Navegación principal</nav>
+
+    <!-- Contenido principal único del documento -->
+    <main>
+
+      <!-- Agrupa secciones temáticas relacionadas -->
+      <section>
+
+        <!-- Contenido independiente (artículos, posts, etc.) -->
+        <article>
+          <!-- Encabezado de nivel 1 -->
+          <h1>Título de artículo</h1>
+          <!-- Párrafo de texto -->
+          <p>Contenido principal dentro de un artículo.</p>
+        </article>
+
+        <!-- Contenido complementario (barra lateral, notas) -->
+        <aside>Barra lateral o contenido complementario.</aside>
+
+      </section>
+    </main>
+
+    <!-- Pie de página con créditos, enlaces legales, etc. -->
+    <footer>Pie de página del documento</footer>
+
+    <!-- =================================== -->
+    <!-- TEXTO Y FORMATO -->
+    <!-- =================================== -->
+
+    <!-- Títulos jerárquicos del 1 al 6 -->
+    <h1>Título H1</h1>
+    <h2>Título H2</h2>
+    <h3>Título H3</h3>
+    <h4>Título H4</h4>
+    <h5>Título H5</h5>
+    <h6>Título H6</h6>
+
+    <!-- Etiquetas de formato de texto -->
+    <p>
+      Este es un <b>texto en negrita</b>, <!-- Negrita visual -->
+      <strong>importante</strong>, <!-- Énfasis semántico -->
+      <i>en cursiva</i>, <!-- Cursiva visual -->
+      <em>enfatizado</em>, <!-- Énfasis semántico -->
+      <u>subrayado</u>, <!-- Subrayado -->
+      <s>tachado</s>, <!-- Texto eliminado -->
+      <mark>resaltado</mark>, <!-- Resaltado visual -->
+      <small>más pequeño</small>, <!-- Texto de menor tamaño -->
+      <sup>superíndice</sup>, <!-- Texto arriba de la línea -->
+      <sub>subíndice</sub>. <!-- Texto debajo de la línea -->
+    </p>
+
+    <!-- Abreviatura con significado -->
+    <abbr title="Lenguaje de Marcado de Hipertexto">HTML</abbr><br>
+    <!-- Cita de una obra -->
+    <cite>Nombre de una obra</cite><br>
+    <!-- Código en línea -->
+    <code>let x = 10;</code><br>
+    <!-- Entrada de teclado -->
+    <kbd>Ctrl + S</kbd><br>
+    <!-- Ejemplo de salida de programa -->
+    <samp>Mensaje del sistema</samp><br>
+    <!-- Variable matemática o de código -->
+    <var>x</var><br>
+    <!-- Cita corta en línea -->
+    <q>Esto es una cita corta</q>
+    <!-- Cita larga en bloque -->
+    <blockquote>Cita más larga en bloque.</blockquote>
+    <!-- Información de contacto o autor -->
+    <address>Contacto: contacto@ejemplo.com</address>
+    <!-- Representa una fecha u hora -->
+    <time datetime="2025-11-01">1 de noviembre de 2025</time>
+    <br><br>
+
+    <!-- =================================== -->
+    <!-- LISTAS -->
+    <!-- =================================== -->
+
+    <!-- Lista desordenada -->
+    <ul>
+      <li>Elemento A</li>
+      <li>Elemento B</li>
+    </ul>
+
+    <!-- Lista ordenada -->
+    <ol>
+      <li>Paso 1</li>
+      <li>Paso 2</li>
+    </ol>
+
+    <!-- Lista de definiciones -->
+    <dl>
+      <dt>HTML</dt> <!-- Término -->
+      <dd>Lenguaje de estructura web</dd> <!-- Definición -->
+    </dl>
+
+    <!-- =================================== -->
+    <!-- ENLACES E IMÁGENES -->
+    <!-- =================================== -->
+
+    <!-- Enlace a una página externa -->
+    <a href="https://developer.mozilla.org/es/docs/Web/HTML">Enlace a MDN</a><br>
+
+    <!-- Imagen básica -->
+    <img src="https://via.placeholder.com/100" alt="Ejemplo de imagen"><br>
+
+    <!-- Imagen adaptable -->
+    <picture>
+      <source srcset="https://via.placeholder.com/200" media="(min-width:600px)">
+      <img src="https://via.placeholder.com/100" alt="Imagen adaptable">
+    </picture>
+
+    <!-- Figura con descripción -->
+    <figure>
+      <img src="https://via.placeholder.com/80" alt="Figura">
+      <figcaption>Pie de figura</figcaption>
+    </figure>
+
+    <!-- =================================== -->
+    <!-- MULTIMEDIA -->
+    <!-- =================================== -->
+
+    <!-- Audio con controles -->
+    <audio controls>
+      <source src="audio.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+
+    <!-- Video con controles -->
+    <video controls width="200">
+      <source src="video.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+
+    <!-- Área de dibujo 2D -->
+    <canvas id="miCanvas" width="100" height="100"></canvas>
+
+    <!-- Gráfico vectorial -->
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" fill="blue"></circle>
+    </svg>
+
+    <!-- =================================== -->
+    <!-- FORMULARIOS -->
+    <!-- =================================== -->
+
+    <!-- Inicio del formulario -->
+    <form>
+      <fieldset> <!-- Agrupa elementos del formulario -->
+        <legend>Formulario básico</legend> <!-- Título del grupo -->
+
+        <!-- Campos de entrada -->
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" type="text" name="nombre"><br>
+
+        <label for="correo">Correo:</label>
+        <input id="correo" type="email" name="correo"><br>
+
+        <input type="number" name="edad" min="0" max="100"><br>
+        <input type="password" name="clave"><br>
+        <input type="checkbox" name="acepto"> Acepto<br>
+
+        <!-- Botones de opción -->
+        <input type="radio" name="opcion" value="1"> Uno
+        <input type="radio" name="opcion" value="2"> Dos<br>
+
+        <!-- Más tipos de campos -->
+        <input type="color" name="color"><br>
+        <input type="date" name="fecha"><br>
+        <input type="range" name="rango" min="0" max="10"><br>
+        <input type="file" name="archivo"><br>
+
+        <!-- Área de texto -->
+        <textarea rows="2" cols="20">Texto aquí</textarea><br>
+
+        <!-- Lista desplegable -->
+        <select name="pais">
+          <option>Chile</option>
+          <option>Argentina</option>
+        </select><br>
+
+        <!-- Botones -->
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+
+        <!-- Lista de sugerencias -->
+        <datalist id="sugerencias">
+          <option value="HTML">
+          <option value="CSS">
+        </datalist>
+
+        <!-- Salida de datos -->
+        <output>0</output>
+
+        <!-- Indicadores visuales -->
+        <progress value="60" max="100"></progress>
+        <meter value="0.7">70%</meter>
+
+      </fieldset>
+    </form>
+
+    <!-- =================================== -->
+    <!-- TABLAS -->
+    <!-- =================================== -->
+
+    <table>
+      <caption>Ejemplo de tabla</caption> <!-- Título de tabla -->
+      <thead>
+        <tr><th>Nombre</th><th>Edad</th></tr> <!-- Encabezados -->
+      </thead>
+      <tbody>
+        <tr><td>María</td><td>25</td></tr> <!-- Filas de datos -->
+      </tbody>
+      <tfoot>
+        <tr><td colspan="2">Total: 1 persona</td></tr> <!-- Pie de tabla -->
+      </tfoot>
+    </table>
+
+    <!-- =================================== -->
+    <!-- ELEMENTOS INTERACTIVOS -->
+    <!-- =================================== -->
+
+    <!-- Sección colapsable -->
+    <details>
+      <summary>Más información</summary>
+      <p>Contenido oculto dentro de details.</p>
+    </details>
+
+    <!-- Cuadro de diálogo -->
+    <dialog open>Esto es un cuadro de diálogo</dialog>
+
+    <!-- Menú de comandos -->
+    <menu>
+      <menuitem label="Guardar"></menuitem>
+      <menuitem label="Imprimir"></menuitem>
+    </menu>
+
+    <!-- =================================== -->
+    <!-- INCRUSTACIÓN DE CONTENIDOS -->
+    <!-- =================================== -->
+
+    <!-- Insertar contenido multimedia o PDF -->
+    <embed src="archivo.pdf" width="200" height="100">
+
+    <!-- Objeto genérico -->
+    <object data="archivo.pdf" type="application/pdf" width="200" height="100"></object>
+
+    <!-- Marco para mostrar otra página -->
+    <iframe src="https://example.com" width="200" height="100" title="Ejemplo"></iframe>
+
+    <!-- =================================== -->
+    <!-- SCRIPTS, PLANTILLAS Y COMPONENTES -->
+    <!-- =================================== -->
+
+    <!-- Contenido alternativo si JS está desactivado -->
+    <noscript>Tu navegador no soporta JavaScript</noscript>
+
+    <!-- Bloque de JavaScript -->
+    <script>
+      console.log("Ejemplo de script");
+    </script>
+
+    <!-- Plantilla oculta para clonar en JS -->
+    <template>
+      <p>Esto está dentro de una plantilla.</p>
+    </template>
+
+    <!-- Slot usado en Web Components -->
+    <slot>Contenido por defecto del slot</slot>
+
+  </body>
+</html>
