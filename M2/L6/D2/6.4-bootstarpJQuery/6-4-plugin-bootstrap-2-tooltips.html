@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.4 - Plugin Bootstrap: Tooltips</title>
+
+  <!-- Bootstrap 4.6.2 CSS CORREGIDO -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+  >
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Plugin Bootstrap + jQuery: Tooltips</h1>
+    <p>
+      Pasa el mouse sobre los botones para ver los tooltips (ayudas visuales).
+    </p>
+
+    <button
+      type="button"
+      class="btn btn-info"
+      data-toggle="tooltip"
+      data-placement="top"
+      title="Este botón guarda la información"
+    >
+      Guardar
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-danger ml-3"
+      data-toggle="tooltip"
+      data-placement="right"
+      title="Este botón borra el registro"
+    >
+      Eliminar
+    </button>
+  </div>
+
+  <!-- jQuery primero -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap 4.6.2 JS bundle (incluye Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Inicializamos los tooltips de Bootstrap
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+</body>
+</html>

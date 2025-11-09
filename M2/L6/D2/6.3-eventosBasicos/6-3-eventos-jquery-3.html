@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.3 - Evento keyup con jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>Contador de caracteres (keyup)</h1>
+
+  <label for="mensaje">
+    Escribe un mensaje:
+  </label>
+  <br>
+  <textarea id="mensaje" rows="4" cols="50"></textarea>
+  <p>Caracteres: <span id="contador">0</span></p>
+
+  <script>
+    $(function () {
+      $("#mensaje").on("keyup", function () {
+        const longitud = $(this).val().length;
+        $("#contador").text(longitud);
+      });
+    });
+  </script>
+</body>
+</html>

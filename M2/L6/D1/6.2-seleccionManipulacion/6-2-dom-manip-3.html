@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.2 - Mostrar/Ocultar elementos con jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    #caja {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mostrar, ocultar y alternar elementos</h1>
+
+  <button id="btn-mostrar">Mostrar</button>
+  <button id="btn-ocultar">Ocultar</button>
+  <button id="btn-toggle">Alternar</button>
+
+  <div id="caja">Caja visible/oculta con jQuery</div>
+
+  <script>
+    $(function () {
+      $("#btn-mostrar").on("click", function () {
+        $("#caja").show();
+      });
+
+      $("#btn-ocultar").on("click", function () {
+        $("#caja").hide();
+      });
+
+      $("#btn-toggle").on("click", function () {
+        $("#caja").toggle();
+      });
+    });
+  </script>
+</body>
+</html>

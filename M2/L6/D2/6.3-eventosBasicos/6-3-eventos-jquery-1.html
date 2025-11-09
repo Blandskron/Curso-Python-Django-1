@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.3 - Evento click con jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>Evento click con jQuery</h1>
+
+  <button id="btn-click">Haz clic aquí</button>
+  <p id="resultado">Aún no has hecho clic.</p>
+
+  <script>
+    $(function () {
+      $("#btn-click").on("click", function () {
+        $("#resultado").text("Has hecho clic en el botón usando jQuery.");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.2 - Manipulación de estilos con jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .resaltado {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Modificar estilos usando jQuery</h1>
+
+  <p id="parrafo">
+    Haz clic en los botones para cambiar mi estilo.
+  </p>
+
+  <button id="btn-color">Cambiar color de texto</button>
+  <button id="btn-resaltar">Agregar clase "resaltado"</button>
+  <button id="btn-reset">Resetear estilos</button>
+
+  <script>
+    $(function () {
+      $("#btn-color").on("click", function () {
+        $("#parrafo").css("color", "red");
+      });
+
+      $("#btn-resaltar").on("click", function () {
+        $("#parrafo").addClass("resaltado");
+      });
+
+      $("#btn-reset").on("click", function () {
+        $("#parrafo").removeClass("resaltado").css("color", "");
+      });
+    });
+  </script>
+</body>
+</html>

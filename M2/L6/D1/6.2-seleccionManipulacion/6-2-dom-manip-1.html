@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.2 - Manipulación de texto con jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>Selección y manipulación de texto</h1>
+
+  <p id="parrafo-original">
+    Este texto será reemplazado usando jQuery.
+  </p>
+
+  <button id="btn-texto">Cambiar texto</button>
+  <button id="btn-html">Agregar HTML</button>
+
+  <script>
+    $(function () {
+      $("#btn-texto").on("click", function () {
+        $("#parrafo-original").text("Nuevo texto simple usando .text()");
+      });
+
+      $("#btn-html").on("click", function () {
+        $("#parrafo-original").html(
+          'Texto con <strong>formato</strong> insertado usando .html()'
+        );
+      });
+    });
+  </script>
+</body>
+</html>

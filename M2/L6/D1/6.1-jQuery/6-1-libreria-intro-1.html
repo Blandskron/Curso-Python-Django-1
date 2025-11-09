@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.1 - Introducción a jQuery (Ejemplo 1)</title>
+  <!-- CDN jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>Bibliotecas JavaScript en el Front-End</h1>
+
+  <p>
+    Una biblioteca como <strong>jQuery</strong> nos entrega funciones ya listas
+    para usar, facilitando tareas comunes como seleccionar elementos del DOM,
+    manejar eventos y animar elementos.
+  </p>
+
+  <button id="btn-info">¿Qué hace jQuery?</button>
+
+  <p id="mensaje"></p>
+
+  <script>
+    // Cuando el documento está listo
+    $(function () {
+      $("#btn-info").on("click", function () {
+        $("#mensaje").text(
+          "jQuery simplifica tareas de JavaScript: selección de elementos, eventos y animaciones."
+        );
+      });
+    });
+  </script>
+</body>
+</html>

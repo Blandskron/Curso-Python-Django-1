@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.1 - JS puro vs jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>Comparando JavaScript puro y jQuery</h1>
+
+  <p id="texto">Este texto será cambiado.</p>
+
+  <button id="btn-js-puro">Cambiar con JS puro</button>
+  <button id="btn-jquery">Cambiar con jQuery</button>
+
+  <script>
+    // JS puro
+    document.getElementById("btn-js-puro").addEventListener("click", function () {
+      var p = document.getElementById("texto");
+      p.textContent = "Texto cambiado con JavaScript puro.";
+    });
+
+    // jQuery
+    $("#btn-jquery").on("click", function () {
+      $("#texto").text("Texto cambiado con jQuery (más corto y legible).");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.4 - Plugin Bootstrap: Modal</title>
+
+  <!-- Bootstrap 4.6.2 CSS desde jsDelivr (CORREGIDO) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+  >
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Plugin Bootstrap + jQuery: Modal</h1>
+    <p>
+      Este modal es un componente de terceros proporcionado por Bootstrap,
+      que internamente utiliza jQuery para manejar eventos y animaciones.
+    </p>
+
+    <!-- Botón para abrir el modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#miModal"
+    >
+      Abrir modal
+    </button>
+
+    <!-- Estructura del modal -->
+    <div
+      class="modal fade"
+      id="miModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="miModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="miModalLabel">Título del modal</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Este es un contenido de ejemplo dentro de un modal de Bootstrap.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Guardar cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (primero) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap 4.6.2 JS bundle (incluye Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

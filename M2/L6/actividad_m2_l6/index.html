@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Actividad 6 - Conociendo la Librería jQuery</title>
+
+  <!-- Bootstrap 4.6.2 CSS (usa jQuery como dependencia) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+  >
+
+  <style>
+    body {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      background-color: #f5f5f5;
+    }
+
+    .lista-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="mb-4">
+      <h1 class="h3">Actividad 6 – Conociendo la Librería jQuery</h1>
+      <p class="text-muted mb-0">
+        Ejemplo completo de manipulación del DOM, eventos y uso de un plugin Bootstrap-jQuery.
+      </p>
+    </header>
+
+    <!-- 3. MANIPULACIÓN DEL DOM: lista y botón -->
+    <section class="lista-container mb-4">
+      <h2 class="h5">Lista de elementos</h2>
+      <p class="mb-2">
+        Esta lista será modificada dinámicamente con jQuery al cargar la página
+        (cambio de color y agregado de un cuarto elemento).
+      </p>
+
+      <!-- Lista inicial con 3 elementos -->
+      <ul id="mi-lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+      </ul>
+
+      <!-- 4. EVENTOS EN JQUERY: botón ocultar/mostrar lista -->
+      <button id="btnToggleLista" class="btn btn-primary mt-3">
+        Ocultar lista
+      </button>
+    </section>
+
+    <!-- 5. USO DE PLUGIN BOOTSTRAP-JQUERY: MODAL -->
+    <section class="mb-4">
+      <h2 class="h5">Plugin Bootstrap-jQuery: Modal</h2>
+      <p class="mb-2">
+        El siguiente botón abre un <strong>modal de Bootstrap</strong>, que es un
+        componente (plugin) basado en jQuery.
+      </p>
+
+      <!-- Botón que abre el modal -->
+      <button
+        type="button"
+        class="btn btn-success"
+        data-toggle="modal"
+        data-target="#infoModal"
+      >
+        Abrir modal de información
+      </button>
+
+      <!-- Estructura del modal Bootstrap -->
+      <div
+        class="modal fade"
+        id="infoModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="infoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="infoModalLabel">Ejemplo de Plugin Bootstrap-jQuery</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p class="mb-2">
+                Este modal es un componente de <strong>Bootstrap 4</strong> que utiliza
+                <strong>jQuery</strong> para manejar la animación de apertura/cierre y los eventos
+                (por ejemplo, hacer clic fuera del modal o en el botón cerrar).
+              </p>
+              <ul class="mb-0">
+                <li>Se carga jQuery desde un CDN.</li>
+                <li>Se carga Bootstrap JS (que depende de jQuery).</li>
+                <li>El botón usa atributos <code>data-toggle</code> y <code>data-target</code>
+                    para activar el plugin.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-muted small">
+      Actividad 6 – Fundamentos del Desarrollo Web
+    </footer>
+  </div>
+
+  <!-- jQuery (necesario para Bootstrap 4) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap 4.6.2 JS bundle (incluye Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script específico de la actividad -->
+  <script>
+    // Espera a que el DOM esté listo
+    $(function () {
+      // 3. MANIPULACIÓN DEL DOM:
+      // Cambiar color de texto de los elementos de la lista
+      $("#mi-lista li").css("color", "blue");
+
+      // Agregar dinámicamente un cuarto elemento a la lista
+      $("#mi-lista").append("<li>Elemento 4 (agregado con jQuery)</li>");
+
+      // 4. EVENTOS EN JQUERY:
+      // Botón que oculta/muestra la lista y cambia su texto
+      $("#btnToggleLista").on("click", function () {
+        const $lista = $("#mi-lista");
+        const $boton = $(this);
+
+        if ($lista.is(":visible")) {
+          // Ocultar lista
+          $lista.slideUp(300);
+          $boton.text("Mostrar lista");
+        } else {
+          // Mostrar lista
+          $lista.slideDown(300);
+          $boton.text("Ocultar lista");
+        }
+      });
+
+      // (El plugin del modal Bootstrap se activa solo con data-*
+      // gracias a que Bootstrap JS ya está cargado.)
+    });
+  </script>
+</body>
+</html>

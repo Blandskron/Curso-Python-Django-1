@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.3 - Evento change con jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>Evento change en un select</h1>
+
+  <label for="tema">
+    Elige un tema para la página:
+  </label>
+  <select id="tema">
+    <option value="">Selecciona...</option>
+    <option value="claro">Tema claro</option>
+    <option value="oscuro">Tema oscuro</option>
+  </select>
+
+  <p id="info-tema"></p>
+
+  <script>
+    $(function () {
+      $("#tema").on("change", function () {
+        const valor = $(this).val();
+
+        if (valor === "claro") {
+          $("body").css({ "background-color": "white", "color": "black" });
+          $("#info-tema").text("Has seleccionado el tema claro.");
+        } else if (valor === "oscuro") {
+          $("body").css({ "background-color": "#222", "color": "white" });
+          $("#info-tema").text("Has seleccionado el tema oscuro.");
+        } else {
+          $("body").css({ "background-color": "", "color": "" });
+          $("#info-tema").text("");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

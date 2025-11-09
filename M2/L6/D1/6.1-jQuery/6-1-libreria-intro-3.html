@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.1 - Cargando jQuery desde CDN</title>
+  <!-- Cargamos jQuery desde un CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>Uso de una biblioteca externa: jQuery</h1>
+
+  <p>
+    Este documento demuestra cómo incluir una biblioteca externa (jQuery) y usarla
+    para agregar comportamiento.
+  </p>
+
+  <button id="btn-contador">Haz clic</button>
+  <p>Clicks: <span id="contador">0</span></p>
+
+  <script>
+    $(function () {
+      let total = 0;
+
+      $("#btn-contador").on("click", function () {
+        total++;
+        $("#contador").text(total);
+      });
+    });
+  </script>
+</body>
+</html>
