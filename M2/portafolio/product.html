@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle de producto - Tienda Frontend</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- NAVBAR (misma que en index) -->
+  <header class="navbar">
+    <div class="navbar__logo">
+      <a href="index.html">Tienda<span>Frontend</span></a>
+    </div>
+
+    <nav class="navbar__links">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#productos">Productos</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a href="index.html#carro" class="navbar__cart-link">
+        🛒 Carro (<span id="cart-count">0</span>)
+      </a>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container">
+    <section class="producto-detalle" id="producto-detalle">
+      <!-- El contenido se rellena con JS según el id del producto -->
+    </section>
+
+    <section class="producto-detalle__descripcion-extra">
+      <h2>Información adicional</h2>
+      <p>
+        Esta sección puede contener especificaciones técnicas, reseñas de usuarios,
+        preguntas frecuentes, etc. En un proyecto real, estos datos vendrían desde
+        un backend o archivo JSON.
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__content">
+      <p>&copy; 2025 TiendaFrontend. Todos los derechos reservados.</p>
+      <p>Dirección: Av. Siempre Viva 123, Santiago, Chile.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Datos de ejemplo de los productos (mismo catálogo que en index)
+    const productos = [
+      {
+        id: 1,
+        nombre: "Notebook Pro 15\"",
+        precio: 799990,
+        descripcionCorta: "Potente notebook para trabajo y estudio, con 16GB RAM y 512GB SSD.",
+        descripcionLarga: "Este Notebook Pro de 15 pulgadas incluye un procesador de última generación, 16GB de memoria RAM y un disco SSD de 512GB. Ideal para desarrolladores, diseñadores y estudiantes que necesitan rendimiento y portabilidad.",
+        imagen: "https://via.placeholder.com/500x300?text=Notebook+Pro+15"
+      },
+      {
+        id: 2,
+        nombre: "Smartphone X",
+        precio: 499990,
+        descripcionCorta: "Pantalla OLED, cámara triple y batería de larga duración.",
+        descripcionLarga: "El Smartphone X cuenta con una pantalla OLED de alta resolución, sistema de cámara triple para fotos profesionales y batería optimizada para durar todo el día, incluso con uso intensivo.",
+        imagen: "https://via.placeholder.com/500x300?text=Smartphone+X"
+      },
+      {
+        id: 3,
+        nombre: "Audífonos Inalámbricos",
+        precio: 79990,
+        descripcionCorta: "Sonido de alta fidelidad con cancelación de ruido activa.",
+        descripcionLarga: "Disfruta de tu música favorita con estos audífonos inalámbricos con cancelación de ruido activa, conexión Bluetooth estable y estuche de carga rápida.",
+        imagen: "https://via.placeholder.com/500x300?text=Audifonos+Inalambricos"
+      }
+    ];
+
+    // Función para obtener el parámetro "id" de la URL
+    function getProductIdFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const idString = params.get("id");
+      return idString ? parseInt(idString, 10) : null;
+    }
+
+    // Renderizar el detalle del producto
+    (function renderProductDetail() {
+      const productoId = getProductIdFromUrl();
+      const contenedor = document.getElementById("producto-detalle");
+
+      const producto = productos.find(p => p.id === productoId);
+
+      if (!producto) {
+        contenedor.innerHTML = `
+          <h1>Producto no encontrado</h1>
+          <p>El producto que estás buscando no existe o el enlace es incorrecto.</p>
+          <p><a href="index.html" class="btn btn--primary">Volver al inicio</a></p>
+        `;
+        return;
+      }
+
+      contenedor.innerHTML = `
+        <div class="producto-detalle__grid">
+          <div class="producto-detalle__imagen">
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+          </div>
+          <div class="producto-detalle__info">
+            <h1>${producto.nombre}</h1>
+            <p class="producto-detalle__precio">$${producto.precio.toLocaleString("es-CL")}</p>
+            <p class="producto-detalle__desc-corta">${producto.descripcionCorta}</p>
+            <p class="producto-detalle__desc-larga">${producto.descripcionLarga}</p>
+            <div class="producto-detalle__acciones">
+              <button class="btn btn--primary btn-add-cart" data-product-id="${producto.id}">
+                Agregar al carro
+              </button>
+              <a href="index.html#productos" class="btn btn--outline">Volver a productos</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Volver a conectar el botón de "Agregar al carro" recién insertado
+      attachCartButtons();
+    })();
+  </script>
+</body>
+</html>

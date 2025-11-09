@@ -1,0 +1,72 @@
+/* Reto L3 – Maquetación fija 960px */
+
+/* Estilos globales */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal centrado */
+#contenedor {
+  width: 960px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Encabezado */
+header h1 {
+  text-align: center;
+  color: #2b3a67;
+  margin-bottom: 20px;
+}
+
+/* Maquetación de columnas */
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Columna izquierda */
+#columna-izquierda {
+  width: 260px;
+  padding: 15px;
+  background-color: #e8eef7;
+  border-right: 2px solid #c3d4f0;
+  box-sizing: border-box;
+}
+
+/* Columna derecha */
+#columna-derecha {
+  width: 700px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+/* Títulos secundarios */
+h2, h3 {
+  color: #324a7a;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+}
+
+/* Lista de contenido del libro a tres columnas */
+.lista-contenido {
+  list-style-type: square;
+  column-count: 3;
+  column-gap: 20px;
+  margin-top: 10px;
+}
+
+/* Pie de página */
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}

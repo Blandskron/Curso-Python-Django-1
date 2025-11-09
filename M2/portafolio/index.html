@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tienda Frontend - Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar__logo">
+      <a href="index.html">Tienda<span>Frontend</span></a>
+    </div>
+
+    <nav class="navbar__links">
+      <a href="index.html">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#carro" class="navbar__cart-link">
+        🛒 Carro (<span id="cart-count">0</span>)
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO / PORTADA -->
+  <section class="hero">
+    <div class="hero__content">
+      <h1>Bienvenido a TiendaFrontend</h1>
+      <p>Encuentra los mejores productos de tecnología al mejor precio.</p>
+      <a href="#productos" class="btn btn--primary">Ver productos</a>
+    </div>
+  </section>
+
+  <!-- LISTA DE PRODUCTOS -->
+  <main class="container">
+    <section id="productos" class="productos">
+      <h2>Productos destacados</h2>
+
+      <div class="productos__grid">
+        <!-- Producto 1 -->
+        <article class="card-producto">
+          <img src="https://via.placeholder.com/300x200?text=Notebook" alt="Notebook Pro">
+          <div class="card-producto__body">
+            <h3>Notebook Pro 15"</h3>
+            <p class="card-producto__price">$799.990</p>
+            <p class="card-producto__desc">
+              Potente notebook para trabajo y estudio, con 16GB RAM y 512GB SSD.
+            </p>
+            <div class="card-producto__actions">
+              <a href="product.html?id=1" class="btn btn--outline">Ver detalle</a>
+              <button class="btn btn--primary btn-add-cart" data-product-id="1">
+                Agregar al carro
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="card-producto">
+          <img src="https://via.placeholder.com/300x200?text=Smartphone" alt="Smartphone X">
+          <div class="card-producto__body">
+            <h3>Smartphone X</h3>
+            <p class="card-producto__price">$499.990</p>
+            <p class="card-producto__desc">
+              Pantalla OLED, cámara triple y batería de larga duración.
+            </p>
+            <div class="card-producto__actions">
+              <a href="product.html?id=2" class="btn btn--outline">Ver detalle</a>
+              <button class="btn btn--primary btn-add-cart" data-product-id="2">
+                Agregar al carro
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="card-producto">
+          <img src="https://via.placeholder.com/300x200?text=Audifonos" alt="Audífonos Inalámbricos">
+          <div class="card-producto__body">
+            <h3>Audífonos Inalámbricos</h3>
+            <p class="card-producto__price">$79.990</p>
+            <p class="card-producto__desc">
+              Sonido de alta fidelidad con cancelación de ruido activa.
+            </p>
+            <div class="card-producto__actions">
+              <a href="product.html?id=3" class="btn btn--outline">Ver detalle</a>
+              <button class="btn btn--primary btn-add-cart" data-product-id="3">
+                Agregar al carro
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CARRO (solo demostrativa) -->
+    <section id="carro" class="carro">
+      <h2>Carro de compras</h2>
+      <p>
+        Este es un ejemplo de sección de carro en el frontend.
+        La cantidad de productos en el carro se muestra en la barra de navegación.
+      </p>
+      <p class="carro__info">
+        Productos en el carro: <strong><span id="cart-count-detail">0</span></strong>
+      </p>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="contacto">
+      <h2>Contáctanos</h2>
+      <p>Escríbenos a <a href="mailto:contacto@tiendafrontend.cl">contacto@tiendafrontend.cl</a></p>
+      <p>Teléfono: +56 9 1234 5678</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__content">
+      <p>&copy; 2025 TiendaFrontend. Todos los derechos reservados.</p>
+      <p>Dirección: Av. Siempre Viva 123, Santiago, Chile.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

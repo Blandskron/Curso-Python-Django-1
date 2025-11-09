@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reto L5 - Botón contador de clics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* Estilos básicos de la página */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contenedor {
+      background-color: #ffffff;
+      padding: 24px 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    p.descripcion {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .contador {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1976d2;
+    }
+
+    .boton-contador {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 999px;
+      border: none;
+      background-color: #1976d2;
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.05s ease, box-shadow 0.05s ease, background-color 0.15s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    .boton-contador:hover {
+      background-color: #125a9c;
+    }
+
+    .boton-contador:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Botón contador de clics</h1>
+    <p class="descripcion">
+      Cada vez que presiones el botón, el número del contador aumentará en 1.
+    </p>
+
+    <!-- Aquí se muestra el valor actual del contador -->
+    <div id="contador" class="contador">0</div>
+
+    <!-- Botón que incrementa el contador -->
+    <button id="btnContador" class="boton-contador">
+      ¡Haz clic aquí!
+    </button>
+  </div>
+
+  <script>
+    // Valor inicial del contador
+    let valorContador = 0;
+
+    // Referencias a los elementos del DOM
+    const contadorElemento = document.getElementById("contador");
+    const boton = document.getElementById("btnContador");
+
+    // Evento de clic en el botón
+    boton.addEventListener("click", function () {
+      valorContador++;                      // incrementa el número
+      contadorElemento.textContent = valorContador; // actualiza el texto en pantalla
+    });
+  </script>
+</body>
+</html>

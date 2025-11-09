@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reto L6 - Redirección con jQuery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Cargar jQuery desde CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f8f9fa;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    a {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Reto L6 - Redirección con jQuery</h1>
+  <a href="#" id="enlaceGoogle">Ir a Google</a>
+
+  <script>
+    // Espera a que el DOM esté listo
+    $(document).ready(function () {
+      // Evento click sobre el enlace
+      $("#enlaceGoogle").click(function (event) {
+        event.preventDefault(); // Evita el comportamiento normal del enlace
+
+        // Mostrar alerta
+        alert("Estás siendo redireccionado a Google...");
+
+        // Redirigir después de 1.5 segundos
+        setTimeout(function () {
+          window.location.href = "https://www.google.com";
+        }, 1500);
+      });
+    });
+  </script>
+</body>
+</html>

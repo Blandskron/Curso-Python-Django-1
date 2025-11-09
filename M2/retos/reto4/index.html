@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Landing Page - Reto L4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 (solo para layout/responsividad, sin jQuery) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* Ajustes visuales mínimos para parecerse a un mockup típico */
+
+    body {
+      background-color: #f5f5f5;
+    }
+
+    .navbar-brand span {
+      font-weight: 700;
+      color: #0d6efd;
+    }
+
+    .hero {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    .hero-illus {
+      background-color: #e9ecef;
+      border-radius: 1rem;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e9f2ff;
+      color: #0d6efd;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-weight: 700;
+    }
+
+    .pricing-card.highlight {
+      border: 2px solid #0d6efd;
+      box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.15);
+    }
+
+    footer {
+      background-color: #111827;
+      color: #9ca3af;
+    }
+
+    footer a {
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span>MiLanding</span>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContenido"
+        aria-controls="navbarContenido"
+        aria-expanded="false"
+        aria-label="Alternar navegación"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContenido">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#caracteristicas">Características</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#beneficios">Beneficios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#planes">Planes</a>
+          </li>
+        </ul>
+
+        <a href="#contacto" class="btn btn-primary ms-lg-3">
+          Comenzar
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / PORTADA -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <!-- Texto -->
+        <div class="col-md-6">
+          <h1 class="hero-title mb-3">
+            Título principal de la landing page
+          </h1>
+          <p class="hero-subtitle mb-4">
+            Un texto breve que explique el producto o servicio. Debe ser claro,
+            directo y mostrar el valor principal que recibe el usuario.
+          </p>
+
+          <div class="d-flex flex-column flex-sm-row gap-2">
+            <a href="#planes" class="btn btn-primary btn-lg">
+              Ver planes
+            </a>
+            <a href="#caracteristicas" class="btn btn-outline-secondary btn-lg">
+              Ver más detalles
+            </a>
+          </div>
+
+          <p class="text-muted mt-3 mb-0">
+            Sin tarjetas de crédito. Puedes cancelar cuando quieras.
+          </p>
+        </div>
+
+        <!-- Ilustración / Imagen -->
+        <div class="col-md-6">
+          <div class="hero-illus">
+            <!-- Aquí podrías poner una imagen real <img class="img-fluid" src="..." alt=""> -->
+            <span>Espacio para imagen o ilustración del producto</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CARACTERÍSTICAS -->
+  <section id="caracteristicas" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Características principales</h2>
+        <p class="text-muted mb-0">
+          Algunos puntos clave que destacan lo que hace especial tu servicio.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="text-center h-100">
+            <div class="feature-icon mx-auto">
+              <span class="fs-4">⚡</span>
+            </div>
+            <h3 class="h5">Rendimiento</h3>
+            <p class="text-muted">
+              Nuestra plataforma está optimizada para cargar rápidamente y
+              brindar una experiencia fluida.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="text-center h-100">
+            <div class="feature-icon mx-auto">
+              <span class="fs-4">🔒</span>
+            </div>
+            <h3 class="h5">Seguridad</h3>
+            <p class="text-muted">
+              Mantenemos tus datos protegidos utilizando buenas prácticas y
+              encriptación moderna.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="text-center h-100">
+            <div class="feature-icon mx-auto">
+              <span class="fs-4">📱</span>
+            </div>
+            <h3 class="h5">Responsivo</h3>
+            <p class="text-muted">
+              Diseñado para verse bien en dispositivos móviles, tablets y
+              pantallas de escritorio.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN BENEFICIOS / TEXTO + IMAGEN -->
+  <section id="beneficios" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6 order-md-2">
+          <h2 class="section-title mb-3">Beneficios para tu negocio</h2>
+          <p class="text-muted">
+            Explica en uno o dos párrafos cómo esta solución ayuda directamente
+            a tu cliente: más ventas, mejor organización, ahorro de tiempo, etc.
+          </p>
+          <ul class="text-muted">
+            <li>Mejora la visibilidad de tu marca.</li>
+            <li>Automatiza procesos repetitivos.</li>
+            <li>Ofrece una experiencia más profesional.</li>
+          </ul>
+        </div>
+        <div class="col-md-6 order-md-1">
+          <div class="hero-illus">
+            <span>Espacio para gráfica, estadísticas o captura de pantalla</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PLANES / PRECIOS -->
+  <section id="planes" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Planes disponibles</h2>
+        <p class="text-muted mb-0">
+          Elige el plan que mejor se adapte a tus necesidades.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Plan básico -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center pricing-card">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Básico</h3>
+              <p class="display-6 fw-bold">$9</p>
+              <p class="text-muted">por mes</p>
+              <ul class="list-unstyled mb-4 text-muted">
+                <li>1 proyecto</li>
+                <li>Soporte por correo</li>
+                <li>Actualizaciones mensuales</li>
+              </ul>
+              <a href="#contacto" class="btn btn-outline-primary mt-auto">
+                Elegir plan
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan recomendado -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center pricing-card highlight">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Profesional</h3>
+              <p class="display-6 fw-bold">$19</p>
+              <p class="text-muted">por mes</p>
+              <ul class="list-unstyled mb-4 text-muted">
+                <li>Proyectos ilimitados</li>
+                <li>Soporte prioritario</li>
+                <li>Actualizaciones semanales</li>
+              </ul>
+              <a href="#contacto" class="btn btn-primary mt-auto">
+                Plan recomendado
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan avanzado -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center pricing-card">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Empresarial</h3>
+              <p class="display-6 fw-bold">$49</p>
+              <p class="text-muted">por mes</p>
+              <ul class="list-unstyled mb-4 text-muted">
+                <li>Soporte dedicado 24/7</li>
+                <li>Integraciones avanzadas</li>
+                <li>Reportes personalizados</li>
+              </ul>
+              <a href="#contacto" class="btn btn-outline-primary mt-auto">
+                Hablar con ventas
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CONTACTO / CTA FINAL -->
+  <section id="contacto" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="text-center mb-4">
+            <h2 class="section-title">¿Listo para comenzar?</h2>
+            <p class="text-muted mb-0">
+              Déjanos tus datos y nos pondremos en contacto contigo.
+            </p>
+          </div>
+
+          <form class="card shadow-sm border-0">
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  class="form-control"
+                  placeholder="Tu nombre"
+                  required
+                >
+              </div>
+              <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input
+                  type="email"
+                  id="correo"
+                  class="form-control"
+                  placeholder="tucorreo@ejemplo.com"
+                  required
+                >
+              </div>
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea
+                  id="mensaje"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Cuéntanos qué necesitas"
+                ></textarea>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">
+                  Enviar mensaje
+                </button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4 mt-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <small>&copy; 2025 MiLanding. Todos los derechos reservados.</small>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#caracteristicas" class="me-3">Características</a>
+          <a href="#planes" class="me-3">Planes</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
