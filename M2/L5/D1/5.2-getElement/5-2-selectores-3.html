@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.2 - Varios selectores básicos</title>
+</head>
+<body>
+  <h1>Lectura de varios elementos del DOM</h1>
+
+  <p id="producto">Curso de JavaScript</p>
+  <p id="precio">29990</p>
+
+  <button onclick="mostrarResumen()">
+    Mostrar resumen de compra
+  </button>
+
+  <script>
+    function mostrarResumen() {
+      const producto = document.getElementById("producto").textContent;
+      const precio = document.getElementById("precio").textContent;
+
+      alert("Producto: " + producto + "\nPrecio: $" + precio);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>4.1 - Cómo incorporar Bootstrap</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+</head>
+<body class="bg-dark text-light">
+  <div class="container py-5">
+    <h1 class="mb-4">Incorporando Bootstrap a un proyecto HTML</h1>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h2 class="h5">1. Usando CDN (forma rápida)</h2>
+        <p>
+          Puedes incluir Bootstrap en tu proyecto añadiendo el enlace a la hoja
+          de estilo en el <code>&lt;head&gt;</code> de tu documento HTML:
+        </p>
+        <pre class="bg-black text-success p-3 small">
+&lt;link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/&gt;
+        </pre>
+      </div>
+      <div class="col-md-6">
+        <h2 class="h5">2. Beneficios de usar Bootstrap</h2>
+        <ul class="list-group">
+          <li class="list-group-item">
+            Documentación extensa y ejemplos listos.
+          </li>
+          <li class="list-group-item">
+            Estilos consistentes en todos los navegadores modernos.
+          </li>
+          <li class="list-group-item">
+            Sistema de grillas responsivo para organizar el contenido.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>

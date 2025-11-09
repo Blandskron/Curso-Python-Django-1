@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.5 - Varias funciones simples</title>
+</head>
+<body>
+  <h1>Varias funciones para operaciones simples</h1>
+
+  <p>Escribe un número para ver su doble, triple y raíz cuadrada.</p>
+
+  <input type="number" id="numero">
+  <button onclick="calcular()">
+    Calcular
+  </button>
+
+  <p id="doble"></p>
+  <p id="triple"></p>
+  <p id="raiz"></p>
+
+  <script>
+    function obtenerDoble(n) {
+      return n * 2;
+    }
+
+    function obtenerTriple(n) {
+      return n * 3;
+    }
+
+    function obtenerRaiz(n) {
+      return Math.sqrt(n);
+    }
+
+    function calcular() {
+      const valor = Number(document.getElementById("numero").value);
+
+      if (isNaN(valor)) {
+        document.getElementById("doble").textContent = "Ingresa un número válido.";
+        document.getElementById("triple").textContent = "";
+        document.getElementById("raiz").textContent = "";
+        return;
+      }
+
+      document.getElementById("doble").textContent = "Doble: " + obtenerDoble(valor);
+      document.getElementById("triple").textContent = "Triple: " + obtenerTriple(valor);
+      document.getElementById("raiz").textContent = "Raíz cuadrada: " + obtenerRaiz(valor);
+    }
+  </script>
+</body>
+</html>

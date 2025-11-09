@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.1 - Rol de JavaScript (Ejemplo 1)</title>
+</head>
+<body>
+  <h1>JavaScript en un documento HTML</h1>
+
+  <p>
+    JavaScript permite agregar <strong>interactividad</strong> a esta página.
+    Pulsa el botón para ver un mensaje generado por JavaScript.
+  </p>
+
+  <button onclick="mostrarMensaje()">
+    Mostrar mensaje
+  </button>
+
+  <script>
+    // Función que se ejecuta al hacer clic en el botón
+    function mostrarMensaje() {
+      alert("Hola, este mensaje viene desde JavaScript y muestra su rol interactivo.");
+    }
+  </script>
+</body>
+</html>

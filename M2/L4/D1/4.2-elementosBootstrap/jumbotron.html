@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>4.2 - Hero, imagen y alertas</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+</head>
+<body>
+  <div class="container py-4">
+    <!-- Hero / Jumbotron (Bootstrap 5 ya no tiene clase jumbotron, se simula) -->
+    <section class="bg-light p-5 rounded-3 mb-4">
+      <h1 class="display-5 fw-bold">Bienvenido a mi sitio</h1>
+      <p class="col-md-8 fs-5">
+        Este bloque funciona como un "jumbotron" o sección destacada para llamar
+        la atención del usuario.
+      </p>
+      <button class="btn btn-primary btn-lg">Comenzar ahora</button>
+    </section>
+
+    <!-- Imagen responsiva -->
+    <h2 class="h5">Imagen responsiva</h2>
+    <img
+      src="https://via.placeholder.com/800x300"
+      alt="Ejemplo"
+      class="img-fluid rounded mb-3"
+    >
+
+    <!-- Alerta -->
+    <div class="alert alert-warning" role="alert">
+      <strong>Atención:</strong> Este es un mensaje de alerta usando Bootstrap.
+    </div>
+  </div>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.6 - Uso básico de console.log</title>
+</head>
+<body>
+  <h1>Depuración con console.log</h1>
+
+  <p>
+    Abre la consola del navegador (F12 → Consola) y haz clic en el botón
+    para ver mensajes de depuración.
+  </p>
+
+  <button onclick="ejecutarProceso()">
+    Ejecutar proceso
+  </button>
+
+  <script>
+    function ejecutarProceso() {
+      console.log("Iniciando proceso...");
+
+      const a = 10;
+      const b = 5;
+      console.log("Valor de a:", a);
+      console.log("Valor de b:", b);
+
+      const suma = a + b;
+      console.log("Resultado de la suma:", suma);
+
+      alert("Proceso ejecutado. Revisa la consola para ver los detalles.");
+    }
+  </script>
+</body>
+</html>

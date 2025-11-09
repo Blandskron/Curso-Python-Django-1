@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Sitio con Bootstrap</title>
+
+  <!-- 1) Bootstrap por CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- CSS mínimo propio (para tono exacto lightblue e imagen 400x300) -->
+  <link rel="stylesheet" href="/ASSETS/CSS/custom.css">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<!-- 5.a) Fondo claro tipo lightblue + clase Bootstrap para suavizar -->
+<body class="bg-info-subtle">
+
+  <!-- 3) Navbar superior -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand text-danger" href="#">Mi Sitio Bootstrap</a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarContenido"
+              aria-controls="navbarContenido" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContenido">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#seccion-info">Acerca de</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2) Todo el contenido dentro de un container -->
+  <main class="container my-4">
+
+    <!-- 4) Sección destacada tipo HERO (antes “jumbotron”) -->
+    <section class="py-5 px-4 bg-light rounded-3 mb-4 text-center">
+      <h1 class="text-danger mb-3">
+        Bienvenido a mi sitio responsivo con Bootstrap
+      </h1>
+      <p class="lead mb-0">
+        Este sitio fue construido como ejercicio práctico para aplicar Bootstrap,
+        mejorar la presentación visual y adaptarlo a distintos dispositivos.
+      </p>
+    </section>
+
+    <!-- Contenido principal (ejercicio 3 adaptado a Bootstrap) -->
+    <section id="seccion-info" class="mb-4">
+      <!-- 5.b) Títulos en rojo: usamos text-danger en todos los encabezados -->
+      <h2 class="text-danger mb-3">Información principal</h2>
+
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <p>
+            Aquí puedes describir el contenido de tu proyecto original de la Lección 3,
+            pero ahora organizado con el sistema de grillas de Bootstrap. Este texto se
+            adaptará correctamente tanto en pantallas pequeñas como en escritorio.
+          </p>
+          <p>
+            Observa cómo el layout cambia cuando reduces o amplías el ancho de la ventana
+            del navegador utilizando el modo dispositivo de las herramientas de desarrollador.
+          </p>
+        </div>
+
+        <div class="col-md-6 text-center">
+          <!-- 5.c) Imagen principal centrada y visible a 400x300 px -->
+          <figure>
+            <img
+              src="/ASSETS/IMG/mi-imagen-principal.jpg"
+              alt="Imagen principal del sitio"
+              class="img-fluid main-image"
+            >
+            <figcaption class="small mt-2">
+              Nota: Para mantener el tamaño 400×300 se utiliza
+              <code>object-fit: cover</code> en el CSS. Si la proporción original
+              es distinta, la imagen se recorta suavemente para llenar el área.
+            </figcaption>
+          </figure>
+
+          <!-- 6) Botón de acción debajo de la imagen -->
+          <a href="#contacto" class="btn btn-primary mt-3">
+            ¡Quiero saber más!
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) Alerta informativa o de éxito -->
+    <section class="mb-4">
+      <div class="alert alert-success" role="alert">
+        <strong>Estado del sitio:</strong> Este es un sitio de práctica construido
+        con Bootstrap. La implementación de estilos y responsividad fue exitosa.
+      </div>
+    </section>
+
+    <!-- Sección extra para ver la grilla trabajando -->
+    <section class="mb-5">
+      <h3 class="text-danger mb-3">Sección de tarjetas (opcional)</h3>
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title text-danger">Bloque 1</h4>
+              <p class="card-text">
+                Ejemplo de contenido que se distribuye en columnas gracias a la grilla
+                de Bootstrap, manteniendo una buena legibilidad en distintos tamaños.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title text-danger">Bloque 2</h4>
+              <p class="card-text">
+                Puedes reemplazar estos textos por los elementos específicos
+                de tu proyecto anterior: secciones, beneficios, servicios, etc.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title text-danger">Bloque 3</h4>
+              <p class="card-text">
+                La combinación de cards y grid ayuda a organizar la información
+                de forma visualmente atractiva y ordenada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de contacto sencilla -->
+    <section id="contacto" class="mb-5">
+      <h2 class="text-danger mb-3">Contacto</h2>
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" placeholder="Tu nombre">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" placeholder="tucorreo@ejemplo.com">
+        </div>
+        <div class="col-12">
+          <label class="form-label">Mensaje</label>
+          <textarea class="form-control" rows="4" placeholder="Escribe tu mensaje"></textarea>
+        </div>
+        <div class="col-12 text-end">
+          <button type="submit" class="btn btn-outline-primary">
+            Enviar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 7) Recordatorio: revisar en modo dispositivo -->
+    <section class="mb-5">
+      <h3 class="text-danger mb-3">Verificación de responsividad</h3>
+      <p class="mb-0">
+        Abre las herramientas de desarrollador del navegador (F12 o clic derecho
+        &gt; "Inspeccionar") y activa el modo dispositivo. Prueba distintos anchos
+        (móvil, tablet, escritorio) para confirmar que:
+      </p>
+      <ul>
+        <li>La navbar se colapsa en un menú hamburguesa en pantallas pequeñas.</li>
+        <li>La hero y las tarjetas se adaptan sin romper el diseño.</li>
+        <li>La imagen principal sigue centrada y visible de forma clara.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Bootstrap JS (bundle con Popper, necesario para navbar responsive) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.2 - Lectura de valor de input</title>
+</head>
+<body>
+  <h1>Obtener valores desde un input</h1>
+
+  <label>
+    Escribe tu nombre:
+    <input type="text" id="nombre">
+  </label>
+
+  <button onclick="saludar()">
+    Saludar
+  </button>
+
+  <p id="saludo"></p>
+
+  <script>
+    function saludar() {
+      const inputNombre = document.getElementById("nombre");
+      const textoSaludo = document.getElementById("saludo");
+      const nombreUsuario = inputNombre.value;
+
+      if (nombreUsuario.trim() === "") {
+        textoSaludo.textContent = "Hola, visitante.";
+      } else {
+        textoSaludo.textContent = "Hola, " + nombreUsuario + "!";
+      }
+    }
+  </script>
+</body>
+</html>

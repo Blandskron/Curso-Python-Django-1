@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.3 - onChange en un select</title>
+</head>
+<body>
+  <h1>Evento onChange</h1>
+
+  <label for="color-fondo">
+    Elige un color para el fondo de la página:
+  </label>
+  <select id="color-fondo" onchange="cambiarFondo()">
+    <option value="">Selecciona...</option>
+    <option value="white">Blanco</option>
+    <option value="lightblue">Celeste</option>
+    <option value="lightgreen">Verde claro</option>
+    <option value="lightyellow">Amarillo claro</option>
+  </select>
+
+  <script>
+    function cambiarFondo() {
+      const select = document.getElementById("color-fondo");
+      const colorSeleccionado = select.value;
+
+      if (colorSeleccionado) {
+        document.body.style.backgroundColor = colorSeleccionado;
+      }
+    }
+  </script>
+</body>
+</html>

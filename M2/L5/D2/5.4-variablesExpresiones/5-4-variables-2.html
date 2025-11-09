@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.4 - Condicional edad</title>
+</head>
+<body>
+  <h1>Verificar mayoría de edad</h1>
+
+  <label>
+    Ingresa tu edad:
+    <input type="number" id="edad">
+  </label>
+  <button onclick="verificarEdad()">
+    Verificar
+  </button>
+
+  <p id="mensaje"></p>
+
+  <script>
+    function verificarEdad() {
+      const edad = Number(document.getElementById("edad").value);
+      const mensaje = document.getElementById("mensaje");
+
+      if (edad >= 18) {
+        mensaje.textContent = "Eres mayor de edad.";
+      } else if (edad > 0 && edad < 18) {
+        mensaje.textContent = "Eres menor de edad.";
+      } else {
+        mensaje.textContent = "Por favor ingresa una edad válida.";
+      }
+    }
+  </script>
+</body>
+</html>

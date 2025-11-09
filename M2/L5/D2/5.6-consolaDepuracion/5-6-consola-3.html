@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.6 - Depurando un cálculo con consola</title>
+</head>
+<body>
+  <h1>Depuración de cálculo con consola</h1>
+
+  <label>
+    Ingrese un número:
+    <input type="number" id="numero">
+  </label>
+  <button onclick="multiplicarPorDos()">
+    Multiplicar por 2
+  </button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function multiplicarPorDos() {
+      const input = document.getElementById("numero");
+      const textoResultado = document.getElementById("resultado");
+
+      // Convertimos correctamente a número
+      const valor = Number(input.value);
+
+      console.log("Valor ingresado:", valor);
+
+      if (isNaN(valor)) {
+        console.error("El valor ingresado no es un número.");
+        textoResultado.textContent = "Ingresa un número válido.";
+        return;
+      }
+
+      const resultado = valor * 2;
+      console.log("Resultado (valor * 2):", resultado);
+
+      textoResultado.textContent = "Resultado: " + resultado;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.3 - onClick en un botón</title>
+</head>
+<body>
+  <h1>Evento onClick</h1>
+
+  <p id="estado">Aún no has hecho clic.</p>
+
+  <button onclick="marcarClic()">
+    Haz clic aquí
+  </button>
+
+  <script>
+    function marcarClic() {
+      const parrafoEstado = document.getElementById("estado");
+      parrafoEstado.textContent = "¡Has hecho clic en el botón!";
+    }
+  </script>
+</body>
+</html>

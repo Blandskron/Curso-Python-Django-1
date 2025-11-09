@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.1 - JavaScript cambiando el contenido</title>
+</head>
+<body>
+  <h1>JavaScript modificando el DOM</h1>
+
+  <p id="texto">
+    Este texto será cambiado por JavaScript cuando cargue la página.
+  </p>
+
+  <script>
+    // Cuando se carga el documento, JavaScript modifica el contenido
+    const parrafo = document.getElementById("texto");
+    parrafo.textContent = "JavaScript cambió este texto al cargar la página.";
+  </script>
+</body>
+</html>

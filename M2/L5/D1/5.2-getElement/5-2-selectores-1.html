@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.2 - getElementById (texto)</title>
+</head>
+<body>
+  <h1>Lectura de texto con getElementById</h1>
+
+  <p id="descripcion">
+    Este texto será leído por JavaScript y mostrado en un alert.
+  </p>
+
+  <button onclick="leerTexto()">
+    Leer texto del párrafo
+  </button>
+
+  <script>
+    function leerTexto() {
+      const parrafo = document.getElementById("descripcion");
+      const contenido = parrafo.textContent;
+      alert("El texto del párrafo es: " + contenido);
+    }
+  </script>
+</body>
+</html>

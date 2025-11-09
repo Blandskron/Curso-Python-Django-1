@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lección 5 - Ejercicio 3 (Linkear JS externo)</title>
+  <link rel="stylesheet" href="ASSETS/CSS/style.css">
+</head>
+<body>
+  <header id="top">
+    <h1>Lección 5 - Ejercicio 3</h1>
+    <p>
+      Este documento HTML está enlazado con un archivo JavaScript externo
+      ubicado en <code>ASSETS/JS/main.js</code>.
+    </p>
+  </header>
+
+  <main>
+    <p>
+      Desplázate hacia abajo y usa el botón «Ir arriba» para verificar que el
+      archivo JS externo está correctamente linkeado y funcionando.
+    </p>
+
+    <section class="bloque-largo">
+      <h2>Sección de contenido</h2>
+      <p>
+        Contenido de ejemplo para que la página tenga scroll. El comportamiento
+        de subir suavemente al inicio se implementa en el archivo externo
+        <strong>main.js</strong>.
+      </p>
+    </section>
+    <section class="bloque-largo">
+      <h2>Otra sección</h2>
+      <p>
+        Más contenido de relleno. La idea es probar el enlace del archivo JS
+        externo, no el diseño visual.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <button id="btnIrArriba">Ir arriba</button>
+    <p id="estadoJs"></p>
+  </footer>
+
+  <!-- IMPORTANTE: Enlace al archivo JS externo con la ruta correcta -->
+  <script src="ASSETS/JS/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.3 - Eventos en formulario</title>
+</head>
+<body>
+  <h1>Formulario con onClick y onChange</h1>
+
+  <form onsubmit="return false;">
+    <label>
+      Nombre:
+      <input type="text" id="nombre" onchange="mostrarCambioNombre()">
+    </label>
+    <br><br>
+    <label>
+      Edad:
+      <input type="number" id="edad">
+    </label>
+    <br><br>
+    <button onclick="enviarFormulario()">
+      Enviar
+    </button>
+  </form>
+
+  <p id="mensaje"></p>
+
+  <script>
+    function mostrarCambioNombre() {
+      const nombre = document.getElementById("nombre").value;
+      console.log("El usuario cambió el nombre a: " + nombre);
+    }
+
+    function enviarFormulario() {
+      const nombre = document.getElementById("nombre").value;
+      const edad = document.getElementById("edad").value;
+      const mensaje = document.getElementById("mensaje");
+
+      mensaje.textContent = "Formulario enviado. Nombre: " + nombre + ", Edad: " + edad;
+    }
+  </script>
+</body>
+</html>

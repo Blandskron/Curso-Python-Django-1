@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.1 - JS embebido en HTML</title>
+</head>
+<body>
+  <h1>Ejemplo de integración de JavaScript en HTML</h1>
+
+  <p>
+    JavaScript se puede escribir dentro de la etiqueta <code>&lt;script&gt;</code>
+    para ejecutar lógica en el navegador.
+  </p>
+
+  <button id="btn-saludo">Saludar en consola</button>
+
+  <script>
+    const boton = document.getElementById("btn-saludo");
+
+    boton.addEventListener("click", function () {
+      console.log("Este mensaje viene desde JavaScript en el navegador.");
+      alert("Abre la consola (F12) para ver el mensaje de JavaScript.");
+    });
+  </script>
+</body>
+</html>

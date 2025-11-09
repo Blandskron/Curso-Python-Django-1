@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.4 - Cálculo de descuento</title>
+</head>
+<body>
+  <h1>Calculadora de descuento</h1>
+
+  <label>
+    Precio del producto:
+    <input type="number" id="precio">
+  </label>
+  <br><br>
+  <label>
+    Tipo de cupón:
+    <select id="cupon">
+      <option value="0">Sin cupón</option>
+      <option value="10">Descuento 10%</option>
+      <option value="20">Descuento 20%</option>
+    </select>
+  </label>
+  <br><br>
+  <button onclick="calcularTotal()">
+    Calcular total
+  </button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcularTotal() {
+      const precio = Number(document.getElementById("precio").value);
+      const porcentaje = Number(document.getElementById("cupon").value);
+      const resultado = document.getElementById("resultado");
+
+      if (precio <= 0 || isNaN(precio)) {
+        resultado.textContent = "Ingresa un precio válido.";
+        return;
+      }
+
+      const descuento = precio * (porcentaje / 100);
+      const total = precio - descuento;
+
+      resultado.textContent = "Total a pagar: $" + total + " (Descuento aplicado: " + porcentaje + "%)";
+    }
+  </script>
+</body>
+</html>

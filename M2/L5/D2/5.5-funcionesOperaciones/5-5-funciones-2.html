@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.5 - Función área de rectángulo</title>
+</head>
+<body>
+  <h1>Cálculo del área de un rectángulo</h1>
+
+  <label>
+    Ancho:
+    <input type="number" id="ancho">
+  </label>
+  <br><br>
+  <label>
+    Alto:
+    <input type="number" id="alto">
+  </label>
+  <br><br>
+  <button onclick="mostrarArea()">
+    Calcular área
+  </button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcularArea(ancho, alto) {
+      return ancho * alto;
+    }
+
+    function mostrarArea() {
+      const ancho = Number(document.getElementById("ancho").value);
+      const alto = Number(document.getElementById("alto").value);
+      const resultado = document.getElementById("resultado");
+
+      if (ancho <= 0 || alto <= 0 || isNaN(ancho) || isNaN(alto)) {
+        resultado.textContent = "Ingresa valores mayores a 0 para ancho y alto.";
+        return;
+      }
+
+      const area = calcularArea(ancho, alto);
+      resultado.textContent = "Área: " + area + " unidades cuadradas.";
+    }
+  </script>
+</body>
+</html>

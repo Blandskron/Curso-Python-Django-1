@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>5.6 - console.error y console.warn</title>
+</head>
+<body>
+  <h1>Mensajes de error y advertencia</h1>
+
+  <label>
+    Ingresa un número entre 1 y 10:
+    <input type="number" id="numero">
+  </label>
+  <button onclick="validarNumero()">
+    Validar
+  </button>
+
+  <script>
+    function validarNumero() {
+      const valor = Number(document.getElementById("numero").value);
+
+      if (!valor && valor !== 0) {
+        console.error("No se ingresó un número válido.");
+        alert("Debes ingresar un número.");
+        return;
+      }
+
+      if (valor < 1 || valor > 10) {
+        console.warn("Número fuera de rango (1-10). Valor ingresado:", valor);
+        alert("El número debe estar entre 1 y 10.");
+      } else {
+        console.log("Número válido:", valor);
+        alert("Número correcto, revisa la consola para más detalles.");
+      }
+    }
+  </script>
+</body>
+</html>

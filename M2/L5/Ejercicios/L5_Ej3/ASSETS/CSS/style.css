@@ -1,0 +1,50 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+.bloque-largo {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #f1f8e9;
+  border-radius: 8px;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  background-color: #eeeeee;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+#btnIrArriba {
+  padding: 10px 20px;
+  border: none;
+  background-color: #388e3c;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#btnIrArriba:hover {
+  background-color: #2e7d32;
+}
+
+#estadoJs {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}

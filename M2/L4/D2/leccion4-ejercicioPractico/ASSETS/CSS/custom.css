@@ -1,0 +1,12 @@
+/* Fondo exacto lightblue sobre la clase de Bootstrap */
+body {
+  background-color: lightblue; /* Mantiene el look del ejercicio anterior */
+}
+
+/* Imagen principal 400x300 centrada y recortada suavemente si la proporción no coincide */
+.main-image {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;   /* Recorta para llenar todo el cuadro sin deformar demasiado */
+  display: inline-block;
+}
