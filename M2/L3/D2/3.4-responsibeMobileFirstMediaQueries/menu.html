@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>3.4 - Menú responsive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+    }
+
+    .nav {
+      background-color: #212121;
+      padding: 10px;
+    }
+
+    .nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column; /* Mobile: vertical */
+      gap: 8px;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .nav ul {
+        flex-direction: row; /* En pantallas grandes: horizontal */
+      }
+
+      .nav a {
+        font-size: 18px;
+        padding: 10px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Portafolio</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

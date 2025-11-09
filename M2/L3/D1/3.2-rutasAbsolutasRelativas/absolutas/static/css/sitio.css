@@ -1,0 +1,16 @@
+/* /static/css/sitio.css (ruta absoluta dentro del servidor) */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+}
+
+.header {
+  background-color: #673ab7;
+  color: white;
+  padding: 16px 20px;
+}
+
+.banner {
+  width: 100%;
+  display: block;
+}

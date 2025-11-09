@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>3.3 - Tabla de precios</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .precios {
+      max-width: 800px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .precios th,
+    .precios td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    .precios th {
+      background-color: #1a73e8;
+      color: white;
+    }
+
+    .precios tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    .precios__destacado {
+      font-weight: bold;
+      color: #1a73e8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Problema planteado: mostrar planes de precios de forma clara y legible -->
+  <table class="precios">
+    <tr>
+      <th>Plan</th>
+      <th>Usuarios</th>
+      <th>Precio mensual</th>
+    </tr>
+    <tr>
+      <td>Básico</td>
+      <td>1</td>
+      <td>$9.990</td>
+    </tr>
+    <tr>
+      <td class="precios__destacado">Pro</td>
+      <td>5</td>
+      <td class="precios__destacado">$19.990</td>
+    </tr>
+    <tr>
+      <td>Empresa</td>
+      <td>Ilimitado</td>
+      <td>$39.990</td>
+    </tr>
+  </table>
+</body>
+</html>

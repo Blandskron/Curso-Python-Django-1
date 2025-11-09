@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>3.4 - Tarjetas responsivas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 16px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      flex: 1 1 100%; /* Mobile: 1 por fila */
+    }
+
+    @media (min-width: 600px) {
+      .card {
+        flex: 1 1 calc(50% - 16px); /* Tablet: 2 por fila */
+      }
+    }
+
+    @media (min-width: 992px) {
+      .card {
+        flex: 1 1 calc(25% - 16px); /* Escritorio: 4 por fila */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Cursos disponibles</h1>
+  <div class="grid">
+    <article class="card">Curso 1</article>
+    <article class="card">Curso 2</article>
+    <article class="card">Curso 3</article>
+    <article class="card">Curso 4</article>
+  </div>
+</body>
+</html>

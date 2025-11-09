@@ -1,0 +1,11 @@
+/* Lección 3 - Ejercicio 3 */
+/* Fondo lightblue y títulos en rojo */
+body {
+  background-color: lightblue;
+}
+
+h1,
+h2,
+h3 {
+  color: red;
+}

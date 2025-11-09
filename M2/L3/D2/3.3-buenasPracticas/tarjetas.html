@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>3.3 - Tarjeta de producto</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .producto {
+      max-width: 320px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .producto__titulo {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .producto__precio {
+      color: #e53935;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .producto__descripcion {
+      color: #555;
+      margin-bottom: 16px;
+    }
+
+    .producto__boton {
+      display: inline-block;
+      padding: 10px 16px;
+      background-color: #1a73e8;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Problema planteado: mostrar un producto de forma clara y destacada -->
+  <article class="producto">
+    <h1 class="producto__titulo">Auriculares Bluetooth</h1>
+    <p class="producto__precio">$39.990</p>
+    <p class="producto__descripcion">
+      Auriculares inalámbricos con cancelación de ruido y batería de larga duración.
+    </p>
+    <a href="#" class="producto__boton">Agregar al carrito</a>
+  </article>
+</body>
+</html>

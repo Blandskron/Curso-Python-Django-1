@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>3.5 - Especificidad</title>
+  <style>
+    .texto {
+      color: green;
+    }
+
+    #principal {
+      color: purple;
+    }
+  </style>
+</head>
+<body>
+  <!-- Inspecciona y observa que el color final es morado por el id -->
+  <p id="principal" class="texto">
+    Este texto tiene una clase y un id al mismo tiempo.
+  </p>
+</body>
+</html>

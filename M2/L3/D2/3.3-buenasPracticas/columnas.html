@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>3.3 - Layout de dos columnas</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .hero {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .hero__texto,
+    .hero__imagen {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .hero__texto {
+      background-color: #ffffff;
+    }
+
+    .hero__imagen {
+      background-color: #f0f4ff;
+    }
+
+    .hero__titulo {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .hero__parrafo {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .hero__boton {
+      padding: 12px 20px;
+      background-color: #ff5722;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .hero__imagen img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Problema planteado: destacar un servicio con texto e imagen en dos columnas -->
+  <section class="hero">
+    <div class="hero__texto">
+      <h1 class="hero__titulo">Diseñamos tu sitio web profesional</h1>
+      <p class="hero__parrafo">
+        Aumenta la confianza de tus clientes con una presencia digital moderna,
+        rápida y adaptada a tu negocio.
+      </p>
+      <a href="#" class="hero__boton">Agenda una reunión</a>
+    </div>
+    <div class="hero__imagen">
+      <img src="https://via.placeholder.com/500x400" alt="Ejemplo de sitio web">
+    </div>
+  </section>
+</body>
+</html>

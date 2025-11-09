@@ -1,0 +1,26 @@
+/* css/estilos-basicos.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+
+.cabecera {
+  background-color: #222;
+  color: #fff;
+  padding: 15px 20px;
+}
+
+.contenido {
+  padding: 20px;
+}
+
+.boton {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}

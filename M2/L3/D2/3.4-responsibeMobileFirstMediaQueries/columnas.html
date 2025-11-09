@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>3.4 - Mobile First</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 16px;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-direction: column; /* Mobile first: una columna */
+      gap: 16px;
+    }
+
+    .bloque {
+      padding: 16px;
+      background-color: #e3f2fd;
+      border-radius: 8px;
+    }
+
+    /* A partir de 768px (tablet/escritorio) cambia a dos columnas */
+    @media (min-width: 768px) {
+      .contenedor {
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Layout Responsive</h1>
+  <div class="contenedor">
+    <section class="bloque">Contenido principal</section>
+    <aside class="bloque">Barra lateral</aside>
+  </div>
+</body>
+</html>

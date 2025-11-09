@@ -1,0 +1,11 @@
+/* assets/css/main.css */
+body {
+  font-family: system-ui, sans-serif;
+  padding: 20px;
+}
+
+.miniatura {
+  width: 250px;
+  border-radius: 8px;
+  border: 2px solid #1a73e8;
+}
