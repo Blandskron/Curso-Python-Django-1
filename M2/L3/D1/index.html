@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Nombre - Portafolio de Desarrollador</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de la fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Configuración de Tailwind para la fuente Inter -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <!-- Estilos para modo oscuro y claro -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Ocultar la barra de desplazamiento en webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Para modo oscuro */
+        .dark ::-webkit-scrollbar-track {
+            background: #2d3748;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #718096;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header y Navegación -->
+    <header class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">TuNombre.dev</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#inicio" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300">Inicio</a>
+                <a href="#proyectos" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300">Proyectos</a>
+                <a href="#habilidades" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300">Habilidades</a>
+                <a href="#contacto" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300">Contacto</a>
+            </div>
+            <!-- Botón de Menú Móvil -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 dark:text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 shadow-lg">
+            <a href="#inicio" class="block px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Inicio</a>
+            <a href="#proyectos" class="block px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Proyectos</a>
+            <a href="#habilidades" class="block px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Habilidades</a>
+            <a href="#contacto" class="block px-6 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Contacto</a>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-6 pt-24">
+
+        <!-- Sección Hero (Inicio) -->
+        <section id="inicio" class="min-h-[calc(100vh-6rem)] flex items-center">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full">
+                <!-- Texto -->
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+                        Hola, soy <span class="text-indigo-600 dark:text-indigo-400">[Tu Nombre]</span>
+                    </h1>
+                    <p class="text-xl text-gray-700 dark:text-gray-300 mb-8">
+                        Desarrollador Full Stack | Apasionado por crear soluciones web innovadoras y eficientes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contacto" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            Contacta conmigo
+                        </a>
+                        <a href="#proyectos" class="bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">
+                            Ver mis proyectos
+                        </a>
+                    </div>
+                </div>
+                <!-- Imagen -->
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="w-64 h-64 md:w-96 md:h-96 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full overflow-hidden shadow-2xl">
+                        <!-- Reemplaza esta URL con la de tu foto de perfil -->
+                        <img src="https://placehold.co/400x400/6366F1/FFFFFF?text=Tu+Foto" alt="Foto de perfil" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x400/6366F1/FFFFFF?text=Tu+Foto'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="proyectos" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-12">Mis Proyectos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Proyecto 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/34D399/FFFFFF?text=Proyecto+1" alt="Vista previa del Proyecto 1" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/34D399/FFFFFF?text=Proyecto+1'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Nombre del Proyecto 1</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Una breve descripción de tu proyecto, las tecnologías usadas y el problema que resuelve.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">Ver Demo</a>
+                            <a href="#" class="text-gray-600 dark:text-gray-400 font-medium hover:underline">Ver Código</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/F59E0B/FFFFFF?text=Proyecto+2" alt="Vista previa del Proyecto 2" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/F59E0B/FFFFFF?text=Proyecto+2'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Nombre del Proyecto 2</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Una breve descripción de tu proyecto, las tecnologías usadas y el problema que resuelve.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">Ver Demo</a>
+                            <a href="#" class="text-gray-600 dark:text-gray-400 font-medium hover:underline">Ver Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/EF4444/FFFFFF?text=Proyecto+3" alt="Vista previa del Proyecto 3" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/EF4444/FFFFFF?text=Proyecto+3'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Nombre del Proyecto 3</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Una breve descripción de tu proyecto, las tecnologías usadas y el problema que resuelve.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">Ver Demo</a>
+                            <a href="#" class="text-gray-600 dark:text-gray-400 font-medium hover:underline">Ver Código</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección Habilidades -->
+        <section id="habilidades" class="py-20 bg-gray-100 dark:bg-gray-800 rounded-lg">
+            <h2 class="text-3xl font-bold text-center mb-12">Habilidades Técnicas</h2>
+            <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+                <!-- Añade o quita habilidades según necesites -->
+                <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">JavaScript (ES6+)</span>
+                <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">React</span>
+                <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Node.js</span>
+                <span class="bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Express</span>
+                <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Python</span>
+                <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">TypeScript</span>
+                <span class="bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Tailwind CSS</span>
+                <span class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">SQL (PostgreSQL)</span>
+                <span class="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">MongoDB</span>
+                <span class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Git & GitHub</span>
+                <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-sm font-medium px-4 py-2 rounded-full shadow-md">Docker</span>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="py-20 text-center">
+            <h2 class="text-3xl font-bold mb-6">Hablemos</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 max-w-lg mx-auto mb-8">
+                Estoy buscando activamente nuevas oportunidades. Si tienes un proyecto en mente o simplemente quieres saludar, ¡no dudes en contactarme!
+            </p>
+            <a href="mailto:tuemail@ejemplo.com" class="inline-block bg-indigo-600 text-white text-lg px-8 py-4 rounded-lg font-medium hover:bg-indigo-700 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                Enviar un mensaje
+            </a>
+
+            <!-- Redes Sociales -->
+            <div class="flex justify-center space-x-8 mt-12">
+                <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; <span id="current-year"></span> [Tu Nombre]. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para el menú móvil
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Ocultar menú móvil al hacer clic en un enlace
+        const mobileLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+        
+        // Script para el año actual en el footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
