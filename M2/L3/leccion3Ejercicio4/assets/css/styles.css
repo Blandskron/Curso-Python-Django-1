@@ -6,7 +6,15 @@ h1 {
     color: red;
 }
 
-img {
+.imagen1 {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;      /* mantiene proporción, corta el exceso */
+  object-position: top; /* recorta desde abajo hacia arriba */
+  border-radius: 50%;      /* opcional, para mantener el círculo */
+}
+
+#imagen2 {
   width: 400px;
   height: 400px;
   object-fit: cover;      /* mantiene proporción, corta el exceso */
