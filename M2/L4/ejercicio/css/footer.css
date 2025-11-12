@@ -1,0 +1,31 @@
+/* ======================================
+   FOOTER
+   ====================================== */
+footer {
+  background-color: #212529;
+  color: #f8f9fa;
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+footer p {
+  margin-bottom: 1rem;
+}
+
+footer ul.social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+footer ul.social a {
+  color: #f8f9fa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer ul.social a:hover {
+  color: #0d6efd;
+}

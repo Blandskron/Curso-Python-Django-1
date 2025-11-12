@@ -1,0 +1,106 @@
+/* =========================================================
+   reset.css — Reinicia los estilos por defecto del navegador
+   ========================================================= */
+
+/* Elimina márgenes, rellenos y bordes predeterminados */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* Asegura una tipografía base coherente */
+html {
+  font-size: 100%;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Hereda la fuente para elementos tipográficos */
+body {
+  font-family: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+/* Quita estilos predeterminados en listas */
+ol, ul {
+  list-style: none;
+}
+
+/* Quita estilos en enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Quita estilos en tablas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Normaliza imágenes y medios */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Quita comillas automáticas en blockquotes y q */
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+}
+
+/* Elimina estilo de botones y formularios */
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Asegura que los botones sean clickeables */
+button {
+  cursor: pointer;
+}
+
+/* Quita subrayado de los enlaces en foco o activo */
+a:focus, a:active {
+  outline: none;
+}
+
+/* Establece elementos HTML5 como display block */
+article, aside, details, figcaption, figure,
+footer, header, main, menu, nav, section {
+  display: block;
+}
+
+/* Oculta elementos con el atributo hidden */
+[hidden] {
+  display: none;
+}
+
+/* Previene el salto por exceso de contenido */
+body {
+  overflow-x: hidden;
+}
+
+/* Opcional: asegura el mismo estilo base en todos los navegadores */
+:root {
+  --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --color-text: #000;
+  --color-bg: #fff;
+}
+body {
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
