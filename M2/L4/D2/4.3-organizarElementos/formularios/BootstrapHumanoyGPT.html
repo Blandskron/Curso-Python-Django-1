@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contacto | Blandskron</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    >
+
+    <!-- Estilos personalizados -->
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: radial-gradient(circle at top left, #4f35aa 0%, #20339f 35%, #0b1020 100%);
+        color: #f8f9fa;
+      }
+
+      .landing-hero {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 3rem 0;
+      }
+
+      .hero-title {
+        font-weight: 800;
+        font-size: clamp(2.3rem, 3vw + 1.2rem, 3.2rem);
+      }
+
+      .hero-subtitle {
+        font-size: 1.05rem;
+        max-width: 480px;
+      }
+
+      .badge-pill-custom {
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.75);
+        color: #e2e8f0;
+        font-size: 0.8rem;
+        padding: 0.35rem 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .badge-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #22c55e;
+      }
+
+      .card-form {
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        background: rgba(15, 23, 42, 0.92);
+        backdrop-filter: blur(18px);
+        box-shadow:
+          0 18px 45px rgba(15, 23, 42, 0.8),
+          0 0 0 1px rgba(148, 163, 184, 0.2);
+      }
+
+      .card-form .form-label {
+        font-weight: 500;
+        color: #e2e8f0;
+      }
+
+      .card-form .form-control {
+        background-color: #020617;
+        border-color: #1e293b;
+        color: #e5e7eb;
+      }
+
+      .card-form .form-control:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 0.15rem rgba(79, 70, 229, 0.4);
+      }
+
+      .btn-gradient {
+        background: linear-gradient(135deg, #4f46e5, #6366f1, #06b6d4);
+        border: none;
+        color: #f9fafb;
+        font-weight: 600;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+      }
+
+      .btn-gradient:hover {
+        filter: brightness(1.05);
+        transform: translateY(-1px);
+      }
+
+      .small-text-muted {
+        font-size: 0.8rem;
+        color: #94a3b8;
+      }
+
+      footer {
+        border-top: 1px solid rgba(148, 163, 184, 0.25);
+        background: rgba(15, 23, 42, 0.85);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER SIMPLE -->
+    <nav class="navbar navbar-dark navbar-expand-lg border-bottom border-secondary" style="background: rgba(15,23,42,0.9);">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          Blandskron<span class="text-info"> Dev</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#contacto">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO + FORM -->
+    <section class="landing-hero">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <!-- Texto principal -->
+          <div class="col-lg-6">
+            <span class="badge-pill-custom mb-3">
+              <span class="badge-dot"></span>
+              Agenda una conversación con nuestro equipo
+            </span>
+            <h1 class="hero-title mb-3">
+              Llevamos tus ideas<br> digitales de concepto a realidad
+            </h1>
+            <p class="hero-subtitle mb-4 text-light">
+              Completa el formulario y te contactaremos para entender tu proyecto, 
+              revisar oportunidades de mejora y proponerte un plan claro para crear 
+              o escalar tu producto digital.
+            </p>
+
+            <ul class="list-unstyled text-light-50 mb-4">
+              <li class="mb-2">✔ Desarrollo de software a medida</li>
+              <li class="mb-2">✔ Plataformas web, apps móviles y dashboards</li>
+              <li class="mb-2">✔ Acompañamiento técnico y consultoría estratégica</li>
+            </ul>
+
+            <p class="small-text-muted mb-0">
+              Respuesta estimada: dentro de las próximas 24–48 horas hábiles.
+            </p>
+          </div>
+
+          <!-- Formulario -->
+          <div class="col-lg-5 ms-auto">
+            <div class="card card-form p-4 p-md-4 rounded-4" id="contacto">
+              <h2 class="h4 mb-1">Agenda tu llamada</h2>
+              <p class="small-text-muted mb-4">
+                Déjanos tus datos y cuéntanos brevemente qué necesitas.
+              </p>
+
+              <!-- ⚠️ FORMULARIO: misma acción y mismos name para que funcione con Google Sheets -->
+              <form
+                action="https://script.google.com/macros/s/AKfycbwnuVhDh_OLKyTdNjwkC0780Y4AklXD7diB5xNK8Bry3rv4rGJAr3a8L4nAIY_P2s3lNg/exec"
+                method="post"
+              >
+                <div class="mb-3">
+                  <label for="exampleInputTexto" class="form-label">Nombre</label>
+                  <input
+                    type="text"
+                    name="nombre"
+                    class="form-control"
+                    id="exampleInputTexto"
+                    placeholder="Escribe tu nombre completo"
+                    required
+                  >
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="tucorreo@ejemplo.com"
+                    required
+                  >
+                  <div id="emailHelp" class="form-text small-text-muted">
+                    Nunca compartiremos tu correo con terceros.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+                  <textarea
+                    name="mensaje"
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="4"
+                    placeholder="Cuéntanos brevemente sobre tu proyecto, necesidades o dudas."
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-gradient w-100 py-2">
+                  Enviar solicitud
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque de servicios / beneficios -->
+        <div class="row mt-5 pt-4" id="servicios">
+          <div class="col-md-4 mb-3">
+            <h3 class="h6 text-uppercase text-secondary">01. Estrategia</h3>
+            <p class="small-text-muted">
+              Te ayudamos a priorizar funcionalidades, definir el MVP y alinear 
+              el proyecto con los objetivos de negocio.
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h3 class="h6 text-uppercase text-secondary">02. Desarrollo</h3>
+            <p class="small-text-muted">
+              Construimos soluciones robustas con tecnologías modernas, listas 
+              para escalar cuando tu producto crezca.
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h3 class="h6 text-uppercase text-secondary">03. Acompañamiento</h3>
+            <p class="small-text-muted">
+              No solo entregamos código: te guiamos en la toma de decisiones, 
+              mejoras continuas y siguientes fases.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-3 mt-4">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center small-text-muted">
+        <span>© <span id="year"></span> Blandskron SpA. Todos los derechos reservados.</span>
+        <span>Desarrollo de software a medida &middot; Chile / Latam</span>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Año dinámico en el footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
