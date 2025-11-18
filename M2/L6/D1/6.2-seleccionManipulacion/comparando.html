@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.2 - Manipulación de estilos con JavaScript puro</title>
+
+  <style>
+    .resaltado {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Modificar estilos usando JavaScript</h1>
+
+  <p id="parrafo">
+    Haz clic en los botones para cambiar mi estilo.
+  </p>
+
+  <button id="btn-color">Cambiar color de texto</button>
+  <button id="btn-resaltar">Agregar clase "resaltado"</button>
+  <button id="btn-reset">Resetear estilos</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const parrafo = document.getElementById("parrafo");
+      const btnColor = document.getElementById("btn-color");
+      const btnResaltar = document.getElementById("btn-resaltar");
+      const btnReset = document.getElementById("btn-reset");
+
+      // Cambiar color de texto
+      btnColor.addEventListener("click", function () {
+        parrafo.style.color = "red";
+      });
+
+      // Agregar clase resaltado
+      btnResaltar.addEventListener("click", function () {
+        parrafo.classList.add("resaltado");
+      });
+
+      // Resetear estilos
+      btnReset.addEventListener("click", function () {
+        parrafo.classList.remove("resaltado");
+        parrafo.style.color = ""; // elimina el color inline
+      });
+    });
+  </script>
+</body>
+</html>

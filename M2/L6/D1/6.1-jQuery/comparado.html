@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>6.1 - Cargando solo JavaScript</title>
+</head>
+<body>
+  <h1>Uso de JavaScript puro sin bibliotecas externas</h1>
+
+  <p>
+    Este documento demuestra cómo agregar comportamiento usando únicamente JavaScript nativo.
+  </p>
+
+  <button id="btn-contador">Haz clic</button>
+  <p>Clicks: <span id="contador">0</span></p>
+
+  <script>
+    // Esperar a que el DOM cargue (equivalente a $(function...) )
+    document.addEventListener("DOMContentLoaded", function () {
+      let total = 0;
+
+      const btn = document.getElementById("btn-contador");
+      const contador = document.getElementById("contador");
+
+      btn.addEventListener("click", function () {
+        total++;
+        contador.textContent = total;
+      });
+    });
+  </script>
+</body>
+</html>
