@@ -13,5 +13,5 @@ btnIrArriba.addEventListener("click", function () {
   });
 
   // También podrías usar scroll hacia un elemento concreto:
-  // document.getElementById("top").scrollIntoView({ behavior: "smooth" });
+  document.getElementById("top").scrollIntoView({ behavior: "smooth" });
 });
