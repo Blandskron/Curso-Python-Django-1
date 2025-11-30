@@ -1,0 +1,124 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+'========= CLASE BASE =========
+abstract class Persona {
+    #rut: str
+    #nombre: str
+    #email: str
+    +login(usuario: str, clave: str): bool
+    +logout(): void
+}
+
+class Alumno {
+    -numero_matricula: str
+    -fecha_ingreso: date
+    -estado: str
+    +inscribirse_curso(curso: Curso): void
+    +consultar_notas(): List<Nota>
+}
+
+class Profesor {
+    -titulo: str
+    -departamento: str
+    +asignar_nota(e: Evaluacion, a: Alumno, puntaje: float): void
+    +crear_evaluacion(c: Curso, nombre: str, pond: float): Evaluacion
+}
+
+class Administrativo {
+    -cargo: str
+    +generar_matricula(a: Alumno, c: Curso): Matricula
+}
+
+Persona <|-- Alumno
+Persona <|-- Profesor
+Persona <|-- Administrativo
+
+'========= CARRERA / ASIGNATURAS =========
+class Carrera {
+    +codigo: str
+    +nombre: str
+    +duracion_semestres: int
+    +agregar_asignatura(a: Asignatura): void
+    +obtener_malla(): List<Asignatura>
+}
+
+class Asignatura {
+    +codigo: str
+    +nombre: str
+    +creditos: int
+    +crear_curso(seccion: str, p: Profesor, periodo: PeriodoAcademico): Curso
+}
+
+Carrera "1" o-- "*" Asignatura
+Carrera "1" -- "*" Alumno
+
+'========= CURSO / HORARIO / SALA =========
+class Curso {
+    +id_curso: int
+    +seccion: str
+    +cupo_maximo: int
+    +inscribir_alumno(a: Alumno): bool
+    +listar_alumnos(): List<Alumno>
+    +calcular_promedio(a: Alumno): float
+}
+
+class Horario {
+    +dia_semana: str
+    +bloque: str
+    +solapa_con(otro: Horario): bool
+}
+
+class Sala {
+    +codigo: str
+    +capacidad: int
+    +tipo: str
+    +esta_disponible(fecha: date, bloque: str): bool
+}
+
+Asignatura "1" *-- "*" Curso
+Profesor "1" -- "*" Curso
+Curso "1" -- "1" Horario
+Curso "1" -- "1" Sala
+
+'========= PERIODO / MATRICULA =========
+class PeriodoAcademico {
+    +anio: int
+    +semestre: int
+    +fecha_inicio: date
+    +fecha_fin: date
+    +es_fecha_valida(fecha: date): bool
+}
+
+class Matricula {
+    +id_matricula: int
+    +fecha: date
+    +estado: str
+    +calcular_arancel(): float
+}
+
+PeriodoAcademico "1" -- "*" Curso
+PeriodoAcademico "1" -- "*" Matricula
+
+Alumno "1" -- "*" Matricula
+Curso  "1" -- "*" Matricula
+
+'========= EVALUACIONES / NOTAS =========
+class Evaluacion {
+    +id_evaluacion: int
+    +nombre: str
+    +fecha: date
+    +ponderacion: float
+    +es_aprobatoria(nota: float): bool
+}
+
+class Nota {
+    +valor: float
+    +es_aprobada(): bool
+}
+
+Curso "1" -- "*" Evaluacion
+Evaluacion "1" -- "*" Nota
+Alumno "1" -- "*" Nota
+
+@enduml
