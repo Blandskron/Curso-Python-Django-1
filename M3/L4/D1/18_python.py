@@ -5,4 +5,10 @@ for fruta in precios:
 
 # 18) for sobre diccionario: items (clave y valor)
 for fruta, precio in precios.items():
-    print(f"{fruta} cuesta {precio}")
+    print(f"fruta: {fruta} precio: {precio}")
+
+for fruta in precios.keys():
+    print(f"fruta: {fruta}")
+
+for precio in precios.values():
+    print(f"precio: {precio}")
