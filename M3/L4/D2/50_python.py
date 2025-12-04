@@ -10,3 +10,10 @@ reporte = [
 
 for linea in reporte:
     print(linea)
+
+estado_aprobacion = []
+
+nombre = input("ingrese su nombre: ")
+estado = input("estado de aprobacion: ")
+estado_aprobacion.append(f"{nombre}: {estado}")
+print(estado_aprobacion)
