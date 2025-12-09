@@ -1,4 +1,6 @@
-catalogo_productos = [{"id": 1, "nombre": "atum", "categoria": "abarrotes", "precio": 1000}, {"id": 2, "nombre": "arroz", "categoria": "abarrotes", "precio": 2000}, {"id": 3, "nombre": "fideos", "categoria": "abarrotes", "precio": 1500}, {"id": 4, "nombre": "champoo", "categoria": "aseo personal", "precio": 2000}, {"id": 5, "nombre": "queso", "categoria": "perecederos", "precio": 5000}]
+from funciones.ver_catalogo import ver_catalogo
+
+catalogo_productos = [{"id": 1, "nombre": "atun", "categoria": "abarrotes", "precio": 1000}, {"id": 2, "nombre": "arroz", "categoria": "abarrotes", "precio": 2000}, {"id": 3, "nombre": "fideos", "categoria": "abarrotes", "precio": 1500}, {"id": 4, "nombre": "shampoo", "categoria": "aseo personal", "precio": 2000}, {"id": 5, "nombre": "queso", "categoria": "perecederos", "precio": 5000}]
 
 print("""
 1) Ver catálogo de productos
@@ -9,30 +11,29 @@ print("""
 0) Salir
 """)
 
-def ver_catalogo():
-    for producto in catalogo_productos:
-        print(catalogo_productos)
-        for clave, valor in producto.items():
-            print(producto)
-            seleccion = input("Ingrese el nombre del producto: ")
-            if seleccion == valor:
-                print("producto encontrado", clave, valor)
-    return f"producto encontrado {clave}, {valor}"
+def buscar_producto():
+    opcion = int(input("Opciones \n 1-Nombre \n 2-Categoria"))
+    if opcion == 1:
+        for producto in catalogo_productos:
+            eleccion = input("Ingrese un nombre")
+            if producto['nombre'] == eleccion:
+                print(f"ID: {producto['id']} | {producto['nombre']} | Cat: {producto['categoria']} | Precio: ${producto['precio']}")
+                break
+            elif producto != eleccion:
+                continue
+            else:
+                print("Producto no encontrado")
+    elif opcion == 2:
+        pass
+    else:
+        print("opcion invalida")
 
 opcion = int(input("Ingrese una opcion: "))
 
 if opcion == 1:
-    for producto in catalogo_productos:
-        ver_catalogo()
+    ver_catalogo(catalogo_productos)
 elif opcion == 2:
-    buscar = int(input("Producto opcion 1 - Categoria opcion 2:"))
-    if buscar == 1:
-        ver_catalogo()
-
-    elif buscar == 2:
-        pass
-    else:
-        print("opcion incorrecta saliendo del programa....")
+    buscar_producto()
 elif opcion == 3:
     pass
 elif opcion == 4:
