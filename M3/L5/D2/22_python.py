@@ -1,6 +1,6 @@
 # 22) Álgebra de conjuntos
 A = {1, 2, 3, 4}
-B = {3, 4, 5}
+B =       {3, 4, 5}
 
 union = A | B
 interseccion = A & B
