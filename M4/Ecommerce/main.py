@@ -10,10 +10,9 @@ o Aplicacion o Tienda (coordina la ejecución y menús)
 from modelos.admin import Admin
 from modelos.producto import Producto
 from modelos.catalogo import Catalogo
+from modelos.carrito import Carrito
 
 
-class Carrito:
-    pass
 
 class Usuario:
     pass
@@ -28,3 +27,4 @@ class Tienda:
 admin_uno = Admin()
 producto_1 = Producto()
 catalogo = Catalogo()
+carrito = Carrito()
