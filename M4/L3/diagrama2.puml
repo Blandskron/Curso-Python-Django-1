@@ -1,0 +1,59 @@
+@startuml
+title Simple Document Upload - Class Diagram
+
+class DocumentsController {
+  +create()
+  +getProgress(progressId: string)
+}
+
+class UploadService {
+  +upload(file, progressId: string): Document
+}
+
+class ProgressService {
+  +update(progressId: string, percent: number)
+  +get(progressId: string): Progress
+}
+
+interface BlobStorage {
+  +upload(stream, name: string): string
+}
+
+interface DocumentRepository {
+  +save(doc: Document): void
+}
+
+interface SearchIndex {
+  +index(doc: Document): void
+}
+
+class AzureBlobStorage
+class PostgresDocumentRepository
+class ElasticsearchIndex
+
+class Document {
+  +id: string
+  +name: string
+  +url: string
+  +status: string
+}
+
+class Progress {
+  +progressId: string
+  +percent: number
+  +status: string
+}
+
+DocumentsController --> UploadService
+DocumentsController --> ProgressService
+
+UploadService --> BlobStorage
+UploadService --> DocumentRepository
+UploadService --> SearchIndex
+UploadService --> ProgressService
+
+AzureBlobStorage ..|> BlobStorage
+PostgresDocumentRepository ..|> DocumentRepository
+ElasticsearchIndex ..|> SearchIndex
+
+@enduml

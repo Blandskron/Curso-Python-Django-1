@@ -1,0 +1,181 @@
+@startuml
+title Document Upload Microservice - Class Diagram
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+
+package "API Layer" {
+  class DocumentsController {
+    +create(req: CreateDocumentRequest): CreateDocumentResponse
+  }
+
+  class ProgressController {
+    +streamProgress(progressId: string): SseStream
+  }
+
+  class AuthGuard {
+    +canActivate(token: string): boolean
+  }
+}
+
+package "Application Layer" {
+  class UploadDocumentUseCase {
+    +execute(cmd: UploadDocumentCommand): UploadDocumentResult
+  }
+
+  class GetProgressUseCase {
+    +execute(progressId: string): ProgressSnapshot
+  }
+
+  class ProgressTracker {
+    +start(progressId: string): void
+    +update(progressId: string, bytesUploaded: number, totalBytes: number): void
+    +complete(progressId: string): void
+    +fail(progressId: string, error: string): void
+    +get(progressId: string): ProgressSnapshot
+    +subscribe(progressId: string): SseStream
+  }
+}
+
+package "Domain Layer" {
+  class Document {
+    +id: UUID
+    +originalName: string
+    +hashName: string
+    +mimeType: string
+    +sizeBytes: number
+    +status: DocumentStatus
+    +blobUrl: string
+    +createdAt: Date
+    +metadata: Json
+  }
+
+  enum DocumentStatus {
+    PENDING
+    UPLOADING
+    STORED
+    INDEXED
+    FAILED
+  }
+
+  class UploadProgress {
+    +progressId: string
+    +bytesUploaded: number
+    +totalBytes: number
+    +percent: number
+    +status: ProgressStatus
+    +updatedAt: Date
+    +message: string
+  }
+
+  enum ProgressStatus {
+    STARTED
+    IN_PROGRESS
+    COMPLETED
+    FAILED
+  }
+}
+
+package "Infrastructure Layer" {
+  interface BlobStorageGateway {
+    +uploadStream(container: string, blobName: string, stream: Readable, sizeBytes: number): BlobUploadResult
+  }
+
+  class AzureBlobStorageAdapter {
+    +uploadStream(container: string, blobName: string, stream: Readable, sizeBytes: number): BlobUploadResult
+  }
+
+  interface DocumentRepository {
+    +save(doc: Document): Document
+    +updateStatus(id: UUID, status: DocumentStatus): void
+    +findById(id: UUID): Document?
+  }
+
+  class PostgresDocumentRepository {
+    +save(doc: Document): Document
+    +updateStatus(id: UUID, status: DocumentStatus): void
+    +findById(id: UUID): Document?
+  }
+
+  interface SearchIndexGateway {
+    +indexDocument(doc: Document): void
+  }
+
+  class ElasticsearchAdapter {
+    +indexDocument(doc: Document): void
+  }
+}
+
+package "DTOs" {
+  class CreateDocumentRequest {
+    +file: MultipartFile
+    +progressId: string
+    +folderId: string
+    +docMetadata: Json
+  }
+
+  class CreateDocumentResponse {
+    +documentId: UUID
+    +progressId: string
+    +status: string
+  }
+
+  class UploadDocumentCommand {
+    +fileStream: Readable
+    +originalName: string
+    +mimeType: string
+    +sizeBytes: number
+    +progressId: string
+    +folderId: string
+    +metadata: Json
+  }
+
+  class UploadDocumentResult {
+    +document: Document
+    +progressId: string
+  }
+
+  class BlobUploadResult {
+    +blobUrl: string
+    +etag: string
+  }
+
+  class ProgressSnapshot {
+    +progressId: string
+    +bytesUploaded: number
+    +totalBytes: number
+    +percent: number
+    +status: string
+    +message: string
+  }
+}
+
+' ===== Relationships =====
+
+DocumentsController --> AuthGuard
+DocumentsController --> UploadDocumentUseCase
+ProgressController --> GetProgressUseCase
+ProgressController --> ProgressTracker
+
+UploadDocumentUseCase --> BlobStorageGateway
+UploadDocumentUseCase --> DocumentRepository
+UploadDocumentUseCase --> SearchIndexGateway
+UploadDocumentUseCase --> ProgressTracker
+
+GetProgressUseCase --> ProgressTracker
+
+AzureBlobStorageAdapter ..|> BlobStorageGateway
+PostgresDocumentRepository ..|> DocumentRepository
+ElasticsearchAdapter ..|> SearchIndexGateway
+
+UploadDocumentUseCase --> UploadDocumentCommand
+DocumentsController --> CreateDocumentRequest
+DocumentsController --> CreateDocumentResponse
+
+DocumentRepository --> Document
+SearchIndexGateway --> Document
+
+ProgressTracker --> UploadProgress
+GetProgressUseCase --> ProgressSnapshot
+
+@enduml
