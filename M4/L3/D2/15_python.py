@@ -1,3 +1,5 @@
+from datetime import datetime
+
 # Ejemplo 13: Biblioteca adquiriendo libros (composición)
 class LibroBiblioteca:
     def __init__(self, titulo: str, autor: str, isbn: str):
@@ -31,8 +33,6 @@ class BibliotecaSocios:
             self._socios.append(socio)
 
 # Ejemplo 15: Biblioteca generando Ticket (dependencia)
-from datetime import datetime
-
 class Ticket:
     def __init__(self, detalle: str):
         self.detalle = detalle

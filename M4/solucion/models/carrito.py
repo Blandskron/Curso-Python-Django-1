@@ -1,4 +1,4 @@
-from catalogo import Catalogo
+from models.catalogo import Catalogo
 
 class Carrito:
     def __init__(self):
