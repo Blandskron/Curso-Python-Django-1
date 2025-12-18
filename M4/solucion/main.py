@@ -5,7 +5,7 @@ Este módulo inicia la ejecución del sistema de e-commerce
 por consola, delegando el control a la clase Tienda.
 """
 
-from models.tienda import Tienda
+from app.tienda import Tienda
 
 
 def main():
