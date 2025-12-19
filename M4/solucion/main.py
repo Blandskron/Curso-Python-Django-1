@@ -6,6 +6,9 @@ por consola, delegando el control a la clase Tienda.
 """
 
 from app.tienda import Tienda
+from utils.logger import LoggerTXT
+
+logger = LoggerTXT()
 
 
 def main():

@@ -1,0 +1,7 @@
+[2025-12-19 12:49:01] Aplicación iniciada
+[2025-12-19 12:49:18] Cliente ingresó al sistema: bastian (bastian@gmail.com)
+[2025-12-19 12:49:21] Cliente visualizó el catálogo
+[2025-12-19 12:49:31] Cliente agregó productos al carrito
+[2025-12-19 12:49:36] Cliente salió del sistema: bastian
+[2025-12-19 12:49:38] Usuario seleccionó salir del sistema
+[2025-12-19 12:49:44] Historial guardado por decisión del usuario

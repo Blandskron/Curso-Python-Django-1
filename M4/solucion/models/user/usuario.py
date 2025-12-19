@@ -7,29 +7,26 @@ Define las clases relacionadas con los usuarios del sistema de e-commerce:
 - Admin: usuario administrador del sistema
 """
 
+import re
 from ..carrito import Carrito
 
 
 class Usuario:
     """
     Clase base que representa a un usuario del sistema.
-
-    Atributos:
-        nombre (str): Nombre del usuario.
-        email (str): Correo electrónico del usuario.
     """
 
     def __init__(self, nombre, email):
-        """
-        Inicializa un usuario genérico.
-
-        Args:
-            nombre (str): Nombre del usuario.
-            email (str): Email del usuario.
-        """
-        # Se fuerza a string para evitar errores de tipo inesperados
         self.nombre = str(nombre)
+
+        if not self._email_valido(email):
+            raise ValueError("Email inválido.")
+
         self.email = str(email)
+
+    def _email_valido(self, email: str) -> bool:
+        patron = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+        return re.match(patron, email) is not None
 
 
 class Cliente(Usuario):
