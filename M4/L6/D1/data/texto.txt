@@ -1,0 +1,4 @@
+Primera línea del archivo
+Segunda línea con más texto
+Tercera línea para pruebas
+Cuarta línea final

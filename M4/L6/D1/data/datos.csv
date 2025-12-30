@@ -1,0 +1,11 @@
+id,nombre,correo,edad,pais,activo
+1,Ana Pérez,ana.perez@email.com,28,Chile,True
+2,Carlos Soto,carlos.soto@email.com,35,Argentina,True
+3,María López,maria.lopez@email.com,22,Perú,False
+4,Javier Muñoz,javier.munoz@email.com,41,Chile,True
+5,Camila Rojas,camila.rojas@email.com,30,Colombia,True
+6,Diego Fernández,diego.fernandez@email.com,27,Uruguay,False
+7,Valentina Torres,valentina.torres@email.com,34,Chile,True
+8,Pablo Díaz,pablo.diaz@email.com,29,México,True
+9,Francisca Silva,francisca.silva@email.com,26,Chile,False
+10,Matías González,matias.gonzalez@email.com,38,España,True

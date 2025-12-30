@@ -1,0 +1,25 @@
+# Configuración general de la aplicación
+
+app:
+  name: MiAplicacion
+  version: 1.0.0
+  environment: development
+  debug: true
+
+server:
+  host: localhost
+  port: 8000
+  workers: 4
+
+database:
+  engine: postgresql
+  host: 127.0.0.1
+  port: 5432
+  name: mi_base_datos
+  user: admin
+  password: secreta123
+
+paths:
+  data_input: data/input
+  data_output: data/output
+  logs: logs/app.log
