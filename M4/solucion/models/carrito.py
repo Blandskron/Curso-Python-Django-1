@@ -102,3 +102,31 @@ class Carrito:
 
         print(f"TOTAL A PAGAR: ${total:.0f}")
         return total
+
+    def boleta(self, catalogo: Catalogo):
+        if self.esta_vacio():
+            print("Carrito vacío.")
+            return 0.0
+
+        print("\n--- CARRITO ---")
+        total = 0.0
+
+        with open("boleta.txt", "w", encoding="utf-8") as f:
+            detalle_boleta = []
+            for producto_id, cantidad in self.items.items():
+                if not catalogo.existe(producto_id):
+                    # El producto fue eliminado del catálogo
+                    continue
+
+                producto = catalogo.obtener(producto_id)
+                subtotal = producto.precio * cantidad
+                total += subtotal
+
+                detalle_boleta += [
+                    f"{producto.nombre} | "
+                    f"Cant: {cantidad} | "
+                    f"Unit: ${producto.precio:.0f} | "
+                    f"Subtotal: ${subtotal:.0f}"
+                ]
+            detalle_boleta += [f"TOTAL A PAGAR: ${total:.0f}\n"]
+            f.writelines(detalle_boleta)

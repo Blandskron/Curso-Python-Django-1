@@ -38,9 +38,11 @@ def confirmar_compra(catalogo, cliente):
         return
 
     total = cliente.carrito.ver_detalle(catalogo)
+
     ok = input("¿Confirmar compra? (s/n): ").strip().lower()
 
     if ok == "s":
+        cliente.carrito.boleta(catalogo)
         cliente.carrito.vaciar()
         print(f"Compra confirmada. Total: ${total:.0f}")
     else:
