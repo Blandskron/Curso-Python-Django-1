@@ -1,0 +1,7 @@
+id,nombre,email,edad,pais,activo
+1,Ana Torres,ana.torres@email.com,28,Chile,True
+2,Carlos Pérez,carlos.perez@email.com,35,Argentina,True
+3,María González,maria.gonzalez@email.com,42,México,False
+4,Juan Soto,juan.soto@email.com,31,Perú,True
+5,Laura Fernández,laura.fernandez@email.com,25,Colombia,True
+6,Pedro Ramírez,pedro.ramirez@email.com,50,Chile,False
