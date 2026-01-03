@@ -1,0 +1,6 @@
+CREATE TABLE org.orders (
+  order_id BIGSERIAL PRIMARY KEY,
+  client_id BIGINT NOT NULL REFERENCES org.clients(client_id),
+  order_date DATE NOT NULL DEFAULT CURRENT_DATE,
+  status VARCHAR(20) NOT NULL DEFAULT 'PENDING'
+);

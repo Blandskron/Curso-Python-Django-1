@@ -1,0 +1,6 @@
+CREATE TABLE org.products (
+  product_id BIGSERIAL PRIMARY KEY,
+  sku VARCHAR(40) NOT NULL UNIQUE,
+  name VARCHAR(120) NOT NULL,
+  price NUMERIC(12,2) NOT NULL CHECK (price >= 0)
+);

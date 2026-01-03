@@ -1,0 +1,3 @@
+CREATE TRIGGER trg_audit_orders
+AFTER INSERT OR UPDATE OR DELETE ON org.orders
+FOR EACH ROW EXECUTE FUNCTION org.fn_audit_orders();

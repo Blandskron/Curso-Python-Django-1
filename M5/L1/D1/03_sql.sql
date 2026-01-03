@@ -1,0 +1,7 @@
+CREATE TABLE org.users (
+  user_id BIGSERIAL PRIMARY KEY,
+  full_name VARCHAR(120) NOT NULL,
+  username  VARCHAR(60)  NOT NULL UNIQUE,
+  is_active BOOLEAN NOT NULL DEFAULT TRUE,
+  created_at TIMESTAMP NOT NULL DEFAULT now()
+);

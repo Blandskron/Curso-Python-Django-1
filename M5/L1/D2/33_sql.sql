@@ -1,0 +1,1 @@
+CREATE ROLE reporter NOINHERIT LOGIN PASSWORD 'cambia_esta_clave';

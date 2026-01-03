@@ -1,0 +1,2 @@
+ALTER TABLE org.clients
+  ALTER COLUMN name SET NOT NULL;

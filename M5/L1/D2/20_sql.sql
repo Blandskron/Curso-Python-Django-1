@@ -1,0 +1,3 @@
+SELECT *
+FROM org.orders
+WHERE order_date BETWEEN DATE '2025-01-01' AND DATE '2025-12-31';

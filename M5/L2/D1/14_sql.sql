@@ -1,0 +1,3 @@
+SELECT *
+FROM orders
+WHERE NOT status = 'CANCELLED';

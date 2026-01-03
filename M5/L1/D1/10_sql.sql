@@ -1,0 +1,2 @@
+-- ejemplo genérico (si existiera supplier_id)
+-- ALTER TABLE org.products ADD CONSTRAINT uq_supplier_sku UNIQUE (supplier_id, sku);
