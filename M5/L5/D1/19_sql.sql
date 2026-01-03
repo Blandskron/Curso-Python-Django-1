@@ -1,0 +1,1 @@
+-- PRIMARY KEY(student_id, course_id) en enrollments

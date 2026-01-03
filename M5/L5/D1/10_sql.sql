@@ -1,0 +1,1 @@
+-- student_addresses PK(student_id, address_no)

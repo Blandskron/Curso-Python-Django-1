@@ -1,0 +1,1 @@
+COMMENT ON TABLE students IS 'Almacena estudiantes. Entidad fuerte del sistema de cursos.';

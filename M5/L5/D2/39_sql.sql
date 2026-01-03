@@ -1,0 +1,1 @@
+-- course_profiles.course_id es PK y FK: no puede haber 2 perfiles para 1 curso.

@@ -1,0 +1,1 @@
+CREATE DATABASE empresa_db;

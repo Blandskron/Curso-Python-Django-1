@@ -1,0 +1,1 @@
+TRUNCATE TABLE enrollments, modules, courses, student_addresses, students RESTART IDENTITY CASCADE;

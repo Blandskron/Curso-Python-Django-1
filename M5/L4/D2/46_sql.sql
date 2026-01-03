@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX idx_productos_sku ON productos(sku);

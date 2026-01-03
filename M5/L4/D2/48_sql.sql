@@ -1,0 +1,1 @@
+COMMENT ON COLUMN clientes.email IS 'Correo único del cliente';

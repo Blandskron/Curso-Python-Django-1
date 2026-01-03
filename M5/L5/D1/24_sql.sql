@@ -1,0 +1,1 @@
+COMMENT ON TABLE enrollments IS 'Tabla puente N-N entre students y courses (inscripciones).';

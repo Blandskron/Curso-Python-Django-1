@@ -1,0 +1,2 @@
+ALTER TABLE clientes
+ALTER COLUMN nombre SET NOT NULL;

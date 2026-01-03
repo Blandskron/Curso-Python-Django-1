@@ -1,0 +1,5 @@
+CREATE TABLE productos (
+  product_id SERIAL PRIMARY KEY,
+  sku VARCHAR(40) UNIQUE,
+  nombre VARCHAR(120) NOT NULL
+);

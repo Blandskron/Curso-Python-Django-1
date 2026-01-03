@@ -1,0 +1,1 @@
+-- enrollments(student_id, course_id) PK + FKs

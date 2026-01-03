@@ -1,0 +1,1 @@
+-- modules.course_id FK -> courses.course_id

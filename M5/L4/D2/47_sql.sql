@@ -1,0 +1,1 @@
+COMMENT ON TABLE clientes IS 'Tabla de clientes del sistema';

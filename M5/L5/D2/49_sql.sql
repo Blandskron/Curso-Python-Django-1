@@ -1,0 +1,10 @@
+DROP VIEW IF EXISTS v_student_course_status;
+DROP TABLE IF EXISTS enrollments_surrogate;
+DROP TABLE IF EXISTS course_profiles;
+DROP TABLE IF EXISTS student_primary_address;
+DROP TABLE IF EXISTS student_addresses;
+DROP TABLE IF EXISTS enrollments;
+DROP TABLE IF EXISTS modules;
+DROP TABLE IF EXISTS courses;
+DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS countries;

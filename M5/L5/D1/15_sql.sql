@@ -1,0 +1,1 @@
+-- enrollments ya cumple: status, enrolled_at, final_grade dependen de (student_id, course_id)

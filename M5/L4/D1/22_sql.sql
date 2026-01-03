@@ -1,0 +1,2 @@
+ALTER TABLE clientes
+DROP COLUMN email;

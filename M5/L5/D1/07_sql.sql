@@ -1,0 +1,1 @@
+-- students(student_id PK), courses(course_id PK)
