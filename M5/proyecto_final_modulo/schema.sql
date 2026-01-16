@@ -1,120 +1,120 @@
 /* ============================================================================
    schema.sql — E-commerce (Módulo 5)
    Motor recomendado: PostgreSQL (pero es estándar y fácil de adaptar)
-   Requisitos: usuarios, productos, categorías, pedidos, detalle, stock
+   Requisitos: usuarios, productos, categorías, pedidos, detalle, stock_productos
    + roles (admin vs customer) + integridad (PK/FK/constraints)
 ============================================================================ */
 
 -- Limpieza ordenada (hijos -> padres)
-DROP TABLE IF EXISTS order_items;
-DROP TABLE IF EXISTS stock;
-DROP TABLE IF EXISTS orders;
-DROP TABLE IF EXISTS products;
-DROP TABLE IF EXISTS categories;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS detalle_pedido;
+DROP TABLE IF EXISTS stock_productos;
+DROP TABLE IF EXISTS pedidos;
+DROP TABLE IF EXISTS productos;
+DROP TABLE IF EXISTS categorias;
+DROP TABLE IF EXISTS usuarios;
 
 -- =========================
--- USERS
+-- usuarios
 -- =========================
-CREATE TABLE users (
-  user_id    BIGSERIAL PRIMARY KEY,
-  name       VARCHAR(120) NOT NULL,
-  email      VARCHAR(180) NOT NULL UNIQUE,
-  role       VARCHAR(20)  NOT NULL CHECK (role IN ('CUSTOMER', 'ADMIN')),
-  created_at TIMESTAMP    NOT NULL DEFAULT NOW()
+CREATE TABLE usuarios (
+  usuario_id    BIGSERIAL PRIMARY KEY,
+  nombre       VARCHAR(120) NOT NULL,
+  correo      VARCHAR(180) NOT NULL UNIQUE,
+  rol       VARCHAR(20)  NOT NULL CHECK (rol IN ('CUSTOMER', 'ADMIN')),
+  fecha_creacion TIMESTAMP    NOT NULL DEFAULT NOW()
 );
 
 -- =========================
--- CATEGORIES
+-- CATEGORIaS
 -- =========================
-CREATE TABLE categories (
-  category_id BIGSERIAL PRIMARY KEY,
-  name        VARCHAR(120) NOT NULL UNIQUE,
-  description VARCHAR(255)
+CREATE TABLE categorias (
+  categoria_id BIGSERIAL PRIMARY KEY,
+  nombre        VARCHAR(120) NOT NULL UNIQUE,
+  descripcion VARCHAR(255)
 );
 
 -- =========================
--- PRODUCTS
+-- PRODUCToS
 -- =========================
-CREATE TABLE products (
-  product_id  BIGSERIAL PRIMARY KEY,
-  category_id BIGINT NOT NULL,
-  name        VARCHAR(160) NOT NULL,
-  description TEXT,
-  price       NUMERIC(12,2) NOT NULL CHECK (price >= 0),
-  active      BOOLEAN NOT NULL DEFAULT TRUE,
-  created_at  TIMESTAMP NOT NULL DEFAULT NOW(),
+CREATE TABLE productos (
+  producto_id  BIGSERIAL PRIMARY KEY,
+  categoria_id BIGINT NOT NULL,
+  nombre        VARCHAR(160) NOT NULL,
+  descripcion TEXT,
+  precio       NUMERIC(12,2) NOT NULL CHECK (precio >= 0),
+  activo      BOOLEAN NOT NULL DEFAULT TRUE,
+  fecha_creacion  TIMESTAMP NOT NULL DEFAULT NOW(),
 
-  CONSTRAINT fk_products_category
-    FOREIGN KEY (category_id)
-    REFERENCES categories(category_id)
+  CONSTRAINT fk_productos_categoria
+    FOREIGN KEY (categoria_id)
+    REFERENCES categorias(categoria_id)
     ON UPDATE CASCADE
     ON DELETE RESTRICT
 );
 
 -- Evitar duplicados evidentes dentro de la misma categoría (opcional pero útil)
-CREATE UNIQUE INDEX uq_products_category_name ON products(category_id, name);
+CREATE UNIQUE INDEX uq_productos_categoria_nombre ON productos(categoria_id, nombre);
 
 -- =========================
--- STOCK (1:1 con product)
+-- STOCK_productos (1:1 con product)
 -- =========================
-CREATE TABLE stock (
-  product_id          BIGINT PRIMARY KEY,
-  quantity            INT NOT NULL CHECK (quantity >= 0),
-  low_stock_threshold INT NOT NULL DEFAULT 5 CHECK (low_stock_threshold >= 0),
-  updated_at          TIMESTAMP NOT NULL DEFAULT NOW(),
+CREATE TABLE stock_productos (
+  producto_id          BIGINT PRIMARY KEY,
+  cantidad            INT NOT NULL CHECK (cantidad >= 0),
+  stock_minimo_productos INT NOT NULL DEFAULT 5 CHECK (stock_minimo_productos >= 0),
+  fecha_creacion          TIMESTAMP NOT NULL DEFAULT NOW(),
 
-  CONSTRAINT fk_stock_product
-    FOREIGN KEY (product_id)
-    REFERENCES products(product_id)
+  CONSTRAINT fk_stock_productos_productos
+    FOREIGN KEY (producto_id)
+    REFERENCES productos(producto_id)
     ON UPDATE CASCADE
     ON DELETE CASCADE
 );
 
 -- =========================
--- ORDERS
+-- pedidos
 -- =========================
-CREATE TABLE orders (
-  order_id   BIGSERIAL PRIMARY KEY,
-  user_id    BIGINT NOT NULL,
-  status     VARCHAR(20) NOT NULL CHECK (status IN ('CREATED', 'PAID', 'CANCELLED')),
-  created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+CREATE TABLE pedidos (
+  pedido_id   BIGSERIAL PRIMARY KEY,
+  usuario_id    BIGINT NOT NULL,
+  estado     VARCHAR(20) NOT NULL CHECK (estado IN ('CREATED', 'PAID', 'CANCELLED')),
+  fecha_creacion TIMESTAMP NOT NULL DEFAULT NOW(),
 
-  CONSTRAINT fk_orders_user
-    FOREIGN KEY (user_id)
-    REFERENCES users(user_id)
+  CONSTRAINT fk_pedidos_usuario
+    FOREIGN KEY (usuario_id)
+    REFERENCES usuarios(usuario_id)
     ON UPDATE CASCADE
     ON DELETE RESTRICT
 );
 
 -- =========================
--- ORDER_ITEMS
+-- detalle_pedido
 -- =========================
-CREATE TABLE order_items (
-  order_item_id BIGSERIAL PRIMARY KEY,
-  order_id      BIGINT NOT NULL,
-  product_id    BIGINT NOT NULL,
-  quantity      INT NOT NULL CHECK (quantity > 0),
-  unit_price    NUMERIC(12,2) NOT NULL CHECK (unit_price >= 0),
+CREATE TABLE detalle_pedido (
+  detalle_pedido_id BIGSERIAL PRIMARY KEY,
+  pedido_id      BIGINT NOT NULL,
+  producto_id    BIGINT NOT NULL,
+  cantidad      INT NOT NULL CHECK (cantidad > 0),
+  precio_unitario    NUMERIC(12,2) NOT NULL CHECK (precio_unitario >= 0),
 
-  CONSTRAINT fk_items_order
-    FOREIGN KEY (order_id)
-    REFERENCES orders(order_id)
+  CONSTRAINT fk_detalle_pedido
+    FOREIGN KEY (pedido_id)
+    REFERENCES pedidos(pedido_id)
     ON UPDATE CASCADE
     ON DELETE CASCADE,
 
-  CONSTRAINT fk_items_product
-    FOREIGN KEY (product_id)
-    REFERENCES products(product_id)
+  CONSTRAINT fk_detalle_productos
+    FOREIGN KEY (producto_id)
+    REFERENCES productos(producto_id)
     ON UPDATE CASCADE
     ON DELETE RESTRICT
 );
 
--- Un producto no debería repetirse dentro del mismo pedido (sumas por quantity)
-CREATE UNIQUE INDEX uq_order_items_order_product ON order_items(order_id, product_id);
+-- Un producto no debería repetirse dentro del mismo pedido (sumas por cantidad)
+CREATE UNIQUE INDEX uq_detalle_pedido_pedidos_productos ON detalle_pedido(pedido_id, producto_id);
 
 -- Índices típicos
-CREATE INDEX idx_products_category ON products(category_id);
-CREATE INDEX idx_orders_user ON orders(user_id);
-CREATE INDEX idx_items_order ON order_items(order_id);
-CREATE INDEX idx_items_product ON order_items(product_id);
+CREATE INDEX idx_productos_categoria ON productos(categoria_id);
+CREATE INDEX idx_pedidos_usuario ON pedidos(usuario_id);
+CREATE INDEX idx_detalle_pedidos ON detalle_pedido(pedido_id);
+CREATE INDEX idx_detalle_productos ON detalle_pedido(producto_id);
