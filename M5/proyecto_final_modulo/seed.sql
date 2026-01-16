@@ -5,7 +5,7 @@
 -- =========================
 -- CATEGORIES (>=3)
 -- =========================
-INSERT INTO categories (name, description) VALUES
+INSERT INTO categorias (nombre, descripcion) VALUES
 ('Tecnología', 'Dispositivos y accesorios'),
 ('Hogar', 'Productos para el hogar'),
 ('Libros', 'Lecturas y formación');
