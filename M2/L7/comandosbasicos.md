@@ -1,7 +1,7 @@
 
 ---
 
-# 📘 Guía Básica para Aprender a Usar GitHub
+#  Guía Básica para Aprender a Usar GitHub
 
 ### *Usando únicamente los comandos esenciales que solicitaste*
 
@@ -18,7 +18,7 @@ En esta guía aprenderás a moverte y trabajar con repositorios usando solo los 
 
 ---
 
-## 🔰 1. Crear o clonar un repositorio (concepto)
+##  1. Crear o clonar un repositorio (concepto)
 
 Antes de usar cualquier comando, debes tener un repositorio en tu computador.
 
@@ -31,13 +31,13 @@ Esto ocurre de dos formas:
 
 ---
 
-## 🌿 2. Crear una nueva rama
+##  2. Crear una nueva rama
 
 Una rama es una “línea de trabajo” separada.
 
 Se usa para trabajar ordenadamente sin romper el código principal.
 
-### ✔ Crear una rama:
+###  Crear una rama:
 
 ```
 git branch nombrerama
@@ -51,7 +51,7 @@ Esto solo **crea** la rama, pero no te mueve a ella.
 
 ---
 
-## 🔀 3. Cambiarse a una rama
+##  3. Cambiarse a una rama
 
 Para comenzar a trabajar en la rama recién creada:
 
@@ -67,13 +67,13 @@ Ahora todo lo que hagas quedará registrado en esa rama.
 
 ---
 
-## ✏ 4. Preparar los archivos para subirlos
+##  4. Preparar los archivos para subirlos
 
 Cuando realizas cambios en tus archivos, Git no los sube automáticamente.
 
 Primero debes  **prepararlos** .
 
-### ✔ Agregar todos los archivos modificados:
+###  Agregar todos los archivos modificados:
 
 ```
 git add .
@@ -83,7 +83,7 @@ Esto toma **todos los archivos que cambiaron** y los deja listos para ser confir
 
 ---
 
-## 💬 5. Crear un commit
+##  5. Crear un commit
 
 Un *commit* es una “foto” del estado de tu trabajo, con un mensaje descriptivo.
 
@@ -99,7 +99,7 @@ El comentario debe explicar  **qué hiciste** .
 
 ---
 
-## 📤 6. Subir los cambios a GitHub
+##  6. Subir los cambios a GitHub
 
 Una vez hecho el commit, debes enviar la rama con sus cambios al repositorio remoto en GitHub.
 
@@ -115,7 +115,7 @@ Esto sube los cambios a GitHub y actualiza la rama.
 
 ---
 
-## 📥 7. Traer cambios desde GitHub a tu computador
+##  7. Traer cambios desde GitHub a tu computador
 
 Si alguien más trabajó en la misma rama, o si volviste después de unos días, es importante actualizar tu copia local.
 
@@ -131,7 +131,7 @@ Esto baja los cambios realizados por otros colaboradores para evitar conflictos.
 
 ---
 
-# 🧩 Flujo básico de trabajo con GitHub (resumen)
+#  Flujo básico de trabajo con GitHub (resumen)
 
 Aquí tienes el flujo típico de uso siguiendo **solo tus comandos:**
 
@@ -157,7 +157,7 @@ Aquí tienes el flujo típico de uso siguiendo **solo tus comandos:**
 
 ---
 
-# 🧠 Consejos finales
+#  Consejos finales
 
 * Trabaja SIEMPRE en tu propia rama.
 * Haz commits frecuentes con mensajes claros.

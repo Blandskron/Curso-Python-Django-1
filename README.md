@@ -1,4 +1,4 @@
-🐍 **Bootcamp: Desarrollo de Aplicaciones Full Stack Python Trainee V2.0**
+ **Bootcamp: Desarrollo de Aplicaciones Full Stack Python Trainee V2.0**
 
 Bienvenido al repositorio oficial del programa **Desarrollo de Aplicaciones Full Stack Python Trainee V2.0**, una iniciativa impulsada por **SENCE**, **Talento Digital para Chile** y **Sustantiva OTEC**, facilitada por el relator **Bastián Landskron** con el apoyo del ayudante académico **Daniel Marín**.
 
@@ -6,13 +6,13 @@ Este bootcamp forma a desarrolladores capaces de construir aplicaciones web comp
 
 ---
 
-🧠 **Propósito del Programa**  
+ **Propósito del Programa**  
 Formar profesionales competentes en el desarrollo **Full Stack con Python**, capaces de diseñar, codificar y mantener aplicaciones web seguras, escalables y eficientes.  
 Los egresados podrán integrarse a equipos de desarrollo de software en empresas públicas o privadas, desempeñando roles **junior o trainee** en áreas TI, aportando a proyectos de transformación digital.
 
 ---
 
-📚 **Plan Formativo**  
+ **Plan Formativo**  
 El programa consta de **9 módulos** con una duración total de **462 horas intensivas**:
 
 | Nº | Módulo | Horas |
@@ -30,7 +30,7 @@ El programa consta de **9 módulos** con una duración total de **462 horas inte
 
 ---
 
-🧰 **Herramientas y Tecnologías Utilizadas**  
+ **Herramientas y Tecnologías Utilizadas**  
 Python 3, Django, HTML5, CSS3, JavaScript, Bootstrap  
 PostgreSQL, MySQL, SQLite  
 Git, GitHub, Visual Studio Code, PyCharm  
@@ -39,7 +39,7 @@ Metodologías ágiles (Scrum, Kanban)
 
 ---
 
-🧑‍🏫 **Facilitación y Acompañamiento**  
+ **Facilitación y Acompañamiento**  
 **Relator Principal:** Bastián Landskron  
 Desarrollador full stack y arquitecto de software con experiencia en entornos Python, Django y tecnologías web. Enfocado en el aprendizaje práctico y la inserción laboral en la industria TI.
 
@@ -48,7 +48,7 @@ Apoyo técnico y académico durante sesiones prácticas, revisión de proyectos 
 
 ---
 
-🏛️ **Instituciones Organizadoras**  
+ **Instituciones Organizadoras**  
 Este bootcamp forma parte de la estrategia nacional **Talento Digital para Chile**, con ejecución de:
 
 - **SENCE**  
@@ -57,27 +57,27 @@ Este bootcamp forma parte de la estrategia nacional **Talento Digital para Chile
 
 ---
 
-📂 **Organización del Repositorio**
+ **Organización del Repositorio**
 
 ```
 
-📁 M1/
+ M1/
 │   └── orientacion.md
-📁 M2/
+ M2/
 │   └── fundamentos_frontend/
-📁 M3/
+ M3/
 │   └── programacion_python/
-📁 M4/
+ M4/
 │   └── programacion_avanzada/
-📁 M5/
+ M5/
 │   └── bases_datos/
-📁 M6/
+ M6/
 │   └── desarrollo_web_django/
-📁 M7/
+ M7/
 │   └── acceso_datos_django/
-📁 M8/
+ M8/
 │   └── portafolio_digital/
-📁 M9/
+ M9/
 │   └── empleabilidad/
 
 ```

@@ -34,7 +34,7 @@ def fake_login():
     print("********")
 
     time.sleep(0.8)
-    print("\n\033[92m✔ Acceso concedido\033[0m")
+    print("\n\033[92m Acceso concedido\033[0m")
     time.sleep(1.2)
 
 
@@ -65,7 +65,7 @@ def scanner_line():
     for i in range(30):
         print(f"[{'=' * i}>{' ' * (30 - i)}] ESCANEANDO PUERTOS", end="\r", flush=True)
         time.sleep(0.03)
-    print("\n\033[92mESCANEO COMPLETADO 🔍\033[0m")
+    print("\n\033[92mESCANEO COMPLETADO \033[0m")
     time.sleep(0.8)
 
 
@@ -93,7 +93,7 @@ def countdown_injection():
     for i in range(5, 0, -1):
         print(f"\033[91mINYECCIÓN EN {i}...\033[0m", end="\r", flush=True)
         time.sleep(0.8)
-    print("\033[92m✔ INYECCIÓN COMPLETADA          \033[0m")
+    print("\033[92m INYECCIÓN COMPLETADA          \033[0m")
     time.sleep(0.8)
 
 
@@ -133,7 +133,7 @@ def progress_vertical():
 
 def moving_snake():
     for i in range(30):
-        print(" " * i + "🐍", end="\r", flush=True)
+        print(" " * i + "", end="\r", flush=True)
         time.sleep(0.03)
     print()
     time.sleep(0.4)
@@ -141,7 +141,7 @@ def moving_snake():
 
 def alert_flashing(veces: int = 6):
     for _ in range(veces):
-        print("\033[91m⚠ ALERTA DE SEGURIDAD DETECTADA ⚠\033[0m", end="\r", flush=True)
+        print("\033[91m ALERTA DE SEGURIDAD DETECTADA \033[0m", end="\r", flush=True)
         time.sleep(0.3)
         print(" " * 40, end="\r", flush=True)
         time.sleep(0.3)
@@ -155,7 +155,7 @@ def mini_scene():
         "Bypassing firewall...",
         "Inyectando payload...",
         "Escalando privilegios...",
-        "Acceso ROOT ✔"
+        "Acceso ROOT "
     ]
     for m in mensajes:
         typing(m)

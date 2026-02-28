@@ -1,4 +1,4 @@
-# 🛒 E-commerce por Consola en Python
+#  E-commerce por Consola en Python
 
 Proyecto educativo de  **e-commerce por consola** , desarrollado en Python, enfocado en  **buenas prácticas** , **arquitectura limpia** y  **separación de responsabilidades** .
 
@@ -6,7 +6,7 @@ Este proyecto implementa un sistema simple de tienda con roles **Administrador**
 
 ---
 
-## 🎯 Objetivos del Proyecto
+##  Objetivos del Proyecto
 
 * Aplicar **PEP8** y el **Zen of Python**
 * Diseñar una arquitectura clara y escalable
@@ -16,7 +16,7 @@ Este proyecto implementa un sistema simple de tienda con roles **Administrador**
 
 ---
 
-## 🧠 Arquitectura General
+##  Arquitectura General
 
 El proyecto está dividido en  **capas claras** :
 
@@ -50,9 +50,9 @@ solucion/
 
 ---
 
-## 🧩 Separación de Responsabilidades
+##  Separación de Responsabilidades
 
-### 📦 Dominio (`models/`)
+###  Dominio (`models/`)
 
 * **No contiene `print()`**
 * Solo reglas de negocio y datos
@@ -62,7 +62,7 @@ solucion/
   * `Producto`
   * `Carrito`
 
-### 🧠 Casos de Uso (`app/`)
+###  Casos de Uso (`app/`)
 
 * Orquestan acciones del usuario
 * Coordinan dominio + UI
@@ -71,16 +71,16 @@ solucion/
   * agregar al carrito
   * confirmar compra
 
-### 🖥️ UI (`ui/`)
+###  UI (`ui/`)
 
 * Única capa que imprime en consola
 * No contiene lógica de negocio
 
 ---
 
-## 👥 Roles del Sistema
+##  Roles del Sistema
 
-### 🔑 Administrador
+###  Administrador
 
 Puede:
 
@@ -90,7 +90,7 @@ Puede:
 * Eliminar productos
 * Sumar stock
 
-### 🛍️ Cliente
+###  Cliente
 
 Puede:
 
@@ -102,7 +102,7 @@ Puede:
 
 ---
 
-## ▶️ Cómo Ejecutar el Proyecto
+## ▶ Cómo Ejecutar el Proyecto
 
 ### Requisitos
 
@@ -118,21 +118,21 @@ python main.py
 
 ---
 
-## 📌 Principios Aplicados
+##  Principios Aplicados
 
-### ✅ Zen of Python
+###  Zen of Python
 
 * Simple es mejor que complejo
 * Explícito es mejor que implícito
 * Cada módulo hace una sola cosa
 
-### ✅ PEP8
+###  PEP8
 
 * Nombres claros
 * Imports explícitos
 * Docstrings en módulos, clases y métodos
 
-### ✅ Diseño Pythonico
+###  Diseño Pythonico
 
 * Composición sobre herencia
 * Funciones pequeñas
@@ -141,7 +141,7 @@ python main.py
 
 ---
 
-## 🚀 Posibles Mejoras Futuras
+##  Posibles Mejoras Futuras
 
 * Persistencia en archivo (JSON / CSV)
 * Tests unitarios (`pytest`)
@@ -151,15 +151,15 @@ python main.py
 
 ---
 
-## 🧪 Estado del Proyecto
+##  Estado del Proyecto
 
-✔ Funcional
-✔ Arquitectura limpia
-✔ Cumple estándares
-✔ Apto para evaluación académica
+ Funcional
+ Arquitectura limpia
+ Cumple estándares
+ Apto para evaluación académica
 
 ---
 
-## ✍️ Autor
+##  Autor
 
 Proyecto desarrollado como ejercicio formativo en Python, enfocado en  **buenas prácticas** , **arquitectura limpia** y  **pensamiento de diseño de software** .

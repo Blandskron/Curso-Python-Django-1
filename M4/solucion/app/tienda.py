@@ -181,7 +181,7 @@ class Tienda:
             self.logger.log("Historial guardado por decisión del usuario")
             self.logger.guardar(nombre_archivo)
 
-            print(f"📄 Historial guardado en '{nombre_archivo}'")
+            print(f" Historial guardado en '{nombre_archivo}'")
         else:
             print("Historial no guardado.")
 

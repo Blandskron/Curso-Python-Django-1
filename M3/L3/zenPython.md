@@ -53,7 +53,7 @@ Te lo traduzco y explico en versión “humana”:
 13. **Debería haber una —y preferiblemente solo una— forma obvia de hacerlo**
 
     Favorecer una “forma estándar” de resolver cada problema en la comunidad.
-14. **Aunque esa forma no sea obvia al principio a menos que seas holandés 😄**
+14. **Aunque esa forma no sea obvia al principio a menos que seas holandés **
 
     Chiste interno sobre Guido van Rossum (creador de Python, que es holandés).
 15. **Ahora es mejor que nunca**
@@ -73,9 +73,9 @@ Te lo traduzco y explico en versión “humana”:
     En Python la indentación define bloques; respétala y úsala bien.
 
 
-## 1️⃣ VARIABLES
+## 1 VARIABLES
 
-### ❌ Anti-Zen (poco claro, confuso)
+###  Anti-Zen (poco claro, confuso)
 
 ```python
 x = 10
@@ -83,7 +83,7 @@ y = 5
 z = x * y
 ```
 
-### ✅ Pro-Zen (explícito y legible)
+###  Pro-Zen (explícito y legible)
 
 ```python
 precio = 10
@@ -91,13 +91,13 @@ cantidad = 5
 total = precio * cantidad
 ```
 
-👉 **Zen aplicado:** *La legibilidad cuenta*
+ **Zen aplicado:** *La legibilidad cuenta*
 
 ---
 
-## 2️⃣ IF / CONDICIONALES
+## 2 IF / CONDICIONALES
 
-### ❌ Anti-Zen (implícito, difícil de entender)
+###  Anti-Zen (implícito, difícil de entender)
 
 ```python
 if x > 7:
@@ -106,17 +106,17 @@ else:
     a = False
 ```
 
-### ✅ Pro-Zen (simple y directo)
+###  Pro-Zen (simple y directo)
 
 ```python
 es_mayor = x > 7
 ```
 
-👉 **Zen aplicado:** *Simple es mejor que complejo*
+ **Zen aplicado:** *Simple es mejor que complejo*
 
 ---
 
-### ❌ Anti-Zen (anidación innecesaria)
+###  Anti-Zen (anidación innecesaria)
 
 ```python
 if edad >= 18:
@@ -124,20 +124,20 @@ if edad >= 18:
         print("Adulto")
 ```
 
-### ✅ Pro-Zen (condición clara)
+###  Pro-Zen (condición clara)
 
 ```python
 if 18 <= edad < 65:
     print("Adulto")
 ```
 
-👉 **Zen aplicado:** *Plano es mejor que anidado*
+ **Zen aplicado:** *Plano es mejor que anidado*
 
 ---
 
-## 3️⃣ FOR
+## 3 FOR
 
-### ❌ Anti-Zen (poco pythonico)
+###  Anti-Zen (poco pythonico)
 
 ```python
 numeros = [1, 2, 3, 4, 5]
@@ -146,7 +146,7 @@ for i in range(len(numeros)):
     print(numeros[i])
 ```
 
-### ✅ Pro-Zen (forma directa)
+###  Pro-Zen (forma directa)
 
 ```python
 numeros = [1, 2, 3, 4, 5]
@@ -155,17 +155,17 @@ for numero in numeros:
     print(numero)
 ```
 
-👉 **Zen aplicado:** *Debería haber una forma obvia de hacerlo*
+ **Zen aplicado:** *Debería haber una forma obvia de hacerlo*
 
 ---
 
-### ❌ Anti-Zen (todo en una línea ilegible)
+###  Anti-Zen (todo en una línea ilegible)
 
 ```python
 for i in range(5): print(i*i*i)
 ```
 
-### ✅ Pro-Zen (claridad primero)
+###  Pro-Zen (claridad primero)
 
 ```python
 for i in range(5):
@@ -173,13 +173,13 @@ for i in range(5):
     print(cubo)
 ```
 
-👉 **Zen aplicado:** *Disperso es mejor que denso*
+ **Zen aplicado:** *Disperso es mejor que denso*
 
 ---
 
-## 4️⃣ WHILE
+## 4 WHILE
 
-### ❌ Anti-Zen (riesgo de bucle infinito)
+###  Anti-Zen (riesgo de bucle infinito)
 
 ```python
 contador = 0
@@ -188,7 +188,7 @@ while True:
     contador += 1
 ```
 
-### ✅ Pro-Zen (condición explícita)
+###  Pro-Zen (condición explícita)
 
 ```python
 contador = 0
@@ -198,13 +198,13 @@ while contador < 5:
     contador += 1
 ```
 
-👉 **Zen aplicado:** *Explícito es mejor que implícito*
+ **Zen aplicado:** *Explícito es mejor que implícito*
 
 ---
 
-## 5️⃣ FUNCIONES (`def`)
+## 5 FUNCIONES (`def`)
 
-### ❌ Anti-Zen (hace muchas cosas)
+###  Anti-Zen (hace muchas cosas)
 
 ```python
 def f(a, b):
@@ -215,7 +215,7 @@ def f(a, b):
     return c * 2
 ```
 
-### ✅ Pro-Zen (una responsabilidad clara)
+###  Pro-Zen (una responsabilidad clara)
 
 ```python
 def sumar(a, b):
@@ -226,18 +226,18 @@ def es_grande(numero):
     return numero > 10
 ```
 
-👉 **Zen aplicado:** *Simple es mejor que complejo*
+ **Zen aplicado:** *Simple es mejor que complejo*
 
 ---
 
-### ❌ Anti-Zen (difícil de explicar)
+###  Anti-Zen (difícil de explicar)
 
 ```python
 def x(y):
     return y*y if y > 0 else y-1
 ```
 
-### ✅ Pro-Zen (se entiende al leer)
+###  Pro-Zen (se entiende al leer)
 
 ```python
 def calcular_valor(numero):
@@ -246,13 +246,13 @@ def calcular_valor(numero):
     return numero - 1
 ```
 
-👉 **Zen aplicado:** *Si es difícil de explicar, es mala idea*
+ **Zen aplicado:** *Si es difícil de explicar, es mala idea*
 
 ---
 
-## 6️⃣ CLASES
+## 6 CLASES
 
-### ❌ Anti-Zen (nombres confusos, poco claros)
+###  Anti-Zen (nombres confusos, poco claros)
 
 ```python
 class A:
@@ -263,7 +263,7 @@ class A:
         return self.x * 2
 ```
 
-### ✅ Pro-Zen (intención clara)
+###  Pro-Zen (intención clara)
 
 ```python
 class Producto:
@@ -274,11 +274,11 @@ class Producto:
         return self.precio * 2
 ```
 
-👉 **Zen aplicado:** *Explícito es mejor que implícito*
+ **Zen aplicado:** *Explícito es mejor que implícito*
 
 ---
 
-### ❌ Anti-Zen (atributos mágicos)
+###  Anti-Zen (atributos mágicos)
 
 ```python
 class User:
@@ -287,7 +287,7 @@ class User:
         self.b = b
 ```
 
-### ✅ Pro-Zen (nombres claros)
+###  Pro-Zen (nombres claros)
 
 ```python
 class Usuario:
@@ -296,13 +296,13 @@ class Usuario:
         self.edad = edad
 ```
 
-👉 **Zen aplicado:** *La legibilidad cuenta*
+ **Zen aplicado:** *La legibilidad cuenta*
 
 ---
 
-## 7️⃣ ERRORES
+## 7 ERRORES
 
-### ❌ Anti-Zen (error silencioso)
+###  Anti-Zen (error silencioso)
 
 ```python
 try:
@@ -311,7 +311,7 @@ except:
     pass
 ```
 
-### ✅ Pro-Zen (error visible)
+###  Pro-Zen (error visible)
 
 ```python
 try:
@@ -320,20 +320,20 @@ except ZeroDivisionError:
     print("No se puede dividir por cero")
 ```
 
-👉 **Zen aplicado:** *Los errores nunca deberían pasar silenciosamente*
+ **Zen aplicado:** *Los errores nunca deberían pasar silenciosamente*
 
 ---
 
-## 🔑 RESUMEN RÁPIDO
+##  RESUMEN RÁPIDO
 
-✅ Buen Python (Pro-Zen):
+ Buen Python (Pro-Zen):
 
 * Nombres claros
 * Código corto y legible
 * Una cosa bien hecha
 * Fácil de explicar
 
-❌ Mal Python (Anti-Zen):
+ Mal Python (Anti-Zen):
 
 * Variables `x`, `a`, `f`
 * Mucha anidación
