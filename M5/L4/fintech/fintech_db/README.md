@@ -1,4 +1,4 @@
-# 💰 Sistema de Transferencias Gamificadas (DB)
+#  Sistema de Transferencias Gamificadas (DB)
 
 Base de datos PostgreSQL para un sistema interno tipo fintech gamificado.  
 No maneja dinero real ni integra sistemas bancarios externos.
@@ -12,7 +12,7 @@ El sistema permite:
 
 ---
 
-## 📌 Características Clave
+##  Características Clave
 
 - **Saldo inicial automático:** todos los clientes comienzan con `10000`
 - **Una sola operación manual:** `INSERT INTO transferencias`
@@ -23,9 +23,9 @@ El sistema permite:
 
 ---
 
-## 🧱 Modelo de Datos
+##  Modelo de Datos
 
-### 1️⃣ clientes
+### 1 clientes
 Representa a los usuarios del sistema.
 
 ```sql
@@ -40,14 +40,14 @@ clientes (
 )
 ````
 
-📌 Al crear un cliente:
+ Al crear un cliente:
 
 * Se genera automáticamente su cuenta
 * Se le asigna saldo inicial = **10000**
 
 ---
 
-### 2️⃣ activos
+### 2 activos
 
 Define las monedas internas del sistema.
 
@@ -61,13 +61,13 @@ activos (
 )
 ```
 
-📌 Ejemplo:
+ Ejemplo:
 
 * `COIN` → moneda interna del sistema
 
 ---
 
-### 3️⃣ cuentas
+### 3 cuentas
 
 Billetera por cliente y por activo.
 
@@ -83,14 +83,14 @@ cuentas (
 )
 ```
 
-📌 Reglas:
+ Reglas:
 
 * Una cuenta por cliente + activo
 * El saldo **nunca puede ser negativo**
 
 ---
 
-### 4️⃣ transferencias
+### 4 transferencias
 
 Registro principal de una operación de envío.
 
@@ -111,14 +111,14 @@ transferencias (
 )
 ```
 
-📌 Importante:
+ Importante:
 
 * **Insertar aquí NO mueve saldo**
 * Solo representa la intención de transferencia
 
 ---
 
-### 5️⃣ transfer_estado_catalogo
+### 5 transfer_estado_catalogo
 
 Catálogo de estados posibles del sistema.
 
@@ -131,7 +131,7 @@ transfer_estado_catalogo (
 )
 ```
 
-📌 Estados clave:
+ Estados clave:
 
 * `CONFIRMED` → `aplica_saldos = true`
 * `BAL_INSUF` → saldo insuficiente
@@ -139,7 +139,7 @@ transfer_estado_catalogo (
 
 ---
 
-### 6️⃣ transferencias_log
+### 6 transferencias_log
 
 Sistema de eventos / auditoría.
 
@@ -156,7 +156,7 @@ transferencias_log (
 )
 ```
 
-📌 Esta tabla:
+ Esta tabla:
 
 * Dispara la aplicación real de saldos
 * Registra errores
@@ -164,22 +164,22 @@ transferencias_log (
 
 ---
 
-## 🔁 Flujo Automático de una Transferencia
+##  Flujo Automático de una Transferencia
 
-### Paso 1️⃣ (manual)
+### Paso 1 (manual)
 
 ```sql
 INSERT INTO transferencias (...)
 VALUES (...);
 ```
 
-### Paso 2️⃣ (automático)
+### Paso 2 (automático)
 
 Trigger `AFTER INSERT ON transferencias`:
 
 * Inserta `CONFIRMED` en `transferencias_log`
 
-### Paso 3️⃣ (automático)
+### Paso 3 (automático)
 
 Trigger `AFTER INSERT ON transferencias_log`:
 
@@ -189,13 +189,13 @@ Trigger `AFTER INSERT ON transferencias_log`:
 * Suma saldo al destino
 * Marca la transferencia como `aplicada`
 
-💥 **No se requieren UPDATEs ni inserts manuales adicionales**
+ **No se requieren UPDATEs ni inserts manuales adicionales**
 
 ---
 
-## ⚙️ Triggers Principales
+##  Triggers Principales
 
-### 🔹 Crear cuenta inicial al crear cliente
+###  Crear cuenta inicial al crear cliente
 
 ```text
 clientes → AFTER INSERT → crea cuenta con saldo = 10000
@@ -203,7 +203,7 @@ clientes → AFTER INSERT → crea cuenta con saldo = 10000
 
 ---
 
-### 🔹 Auto-confirmar transferencia al insertarla
+###  Auto-confirmar transferencia al insertarla
 
 ```text
 transferencias → AFTER INSERT → inserta CONFIRMED en log
@@ -211,7 +211,7 @@ transferencias → AFTER INSERT → inserta CONFIRMED en log
 
 ---
 
-### 🔹 Aplicar transferencia al confirmar
+###  Aplicar transferencia al confirmar
 
 ```text
 transferencias_log → AFTER INSERT (ok=true + aplica_saldos=true)
@@ -226,17 +226,17 @@ Incluye:
 
 ---
 
-## 🛡️ Seguridad y Consistencia
+##  Seguridad y Consistencia
 
-✔ Transacciones atómicas
-✔ Locks ordenados para evitar deadlocks
-✔ Prevención de doble aplicación
-✔ Auditoría completa
-✔ Compatible con alta concurrencia
+ Transacciones atómicas
+ Locks ordenados para evitar deadlocks
+ Prevención de doble aplicación
+ Auditoría completa
+ Compatible con alta concurrencia
 
 ---
 
-## 🧪 Testing Incluido
+##  Testing Incluido
 
 * Inserción masiva de clientes
 * Múltiples series de transferencias
@@ -246,7 +246,7 @@ Incluye:
 
 ---
 
-## 🚀 Escalabilidad Futura
+##  Escalabilidad Futura
 
 Este diseño permite fácilmente:
 
@@ -260,7 +260,7 @@ Este diseño permite fácilmente:
 
 ---
 
-## ⚠️ Nota Importante
+##  Nota Importante
 
 > Este sistema **NO maneja dinero real**
 > Es un sistema **interno y gamificado**
@@ -268,7 +268,7 @@ Este diseño permite fácilmente:
 
 ---
 
-## 📂 Recomendación de uso
+##  Recomendación de uso
 
 Usar esta DB como:
 

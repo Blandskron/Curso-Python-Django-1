@@ -1,8 +1,8 @@
-## 🟦 BASES DE DATOS SQL (Relacionales)
+##  BASES DE DATOS SQL (Relacionales)
 
-👉 **Modelo estructurado**, esquemas rígidos, ACID, ideal para datos críticos.
+ **Modelo estructurado**, esquemas rígidos, ACID, ideal para datos críticos.
 
-### 🔹 PostgreSQL
+###  PostgreSQL
 
 * **Tipo:** SQL relacional avanzada
 * **Herramientas:** pgAdmin, DBeaver, DataGrip
@@ -11,7 +11,7 @@
 
 ---
 
-### 🔹 MySQL
+###  MySQL
 
 * **Tipo:** SQL relacional
 * **Herramientas:** MySQL Workbench, DBeaver, phpMyAdmin
@@ -20,7 +20,7 @@
 
 ---
 
-### 🔹 MariaDB
+###  MariaDB
 
 * **Tipo:** SQL (fork de MySQL)
 * **Herramientas:** DBeaver, HeidiSQL
@@ -29,7 +29,7 @@
 
 ---
 
-### 🔹 SQL Server
+###  SQL Server
 
 * **Tipo:** SQL relacional empresarial
 * **Herramientas:** SSMS, Azure Data Studio
@@ -38,7 +38,7 @@
 
 ---
 
-### 🔹 Oracle Database
+###  Oracle Database
 
 * **Tipo:** SQL relacional empresarial
 * **Herramientas:** Oracle SQL Developer
@@ -47,7 +47,7 @@
 
 ---
 
-### 🔹 SQLite
+###  SQLite
 
 * **Tipo:** SQL embebido
 * **Herramientas:** DB Browser for SQLite
@@ -56,7 +56,7 @@
 
 ---
 
-### 🔹 IBM Db2
+###  IBM Db2
 
 * **Tipo:** SQL empresarial
 * **Herramientas:** Db2 Data Studio
@@ -65,15 +65,15 @@
 
 ---
 
-## 🟩 BASES DE DATOS NoSQL
+##  BASES DE DATOS NoSQL
 
-👉 **Flexibilidad**, escalabilidad horizontal, grandes volúmenes o baja latencia.
+ **Flexibilidad**, escalabilidad horizontal, grandes volúmenes o baja latencia.
 
 ---
 
-## 📄 NoSQL — Documentales
+##  NoSQL — Documentales
 
-### 🔹 MongoDB
+###  MongoDB
 
 * **Modelo:** Documentos (JSON/BSON)
 * **Herramientas:** MongoDB Compass
@@ -82,7 +82,7 @@
 
 ---
 
-### 🔹 CouchDB
+###  CouchDB
 
 * **Modelo:** Documentos
 * **Herramientas:** Fauxton
@@ -91,9 +91,9 @@
 
 ---
 
-## 🔑 NoSQL — Clave-Valor
+##  NoSQL — Clave-Valor
 
-### 🔹 Redis
+###  Redis
 
 * **Modelo:** Key-Value (en memoria)
 * **Herramientas:** RedisInsight
@@ -102,7 +102,7 @@
 
 ---
 
-### 🔹 Amazon DynamoDB
+###  Amazon DynamoDB
 
 * **Modelo:** Key-Value / Document
 * **Herramientas:** AWS Console
@@ -111,9 +111,9 @@
 
 ---
 
-## 📊 NoSQL — Columnas (Wide Column)
+##  NoSQL — Columnas (Wide Column)
 
-### 🔹 Cassandra
+###  Cassandra
 
 * **Modelo:** Columnas distribuidas
 * **Herramientas:** DataStax Studio
@@ -122,7 +122,7 @@
 
 ---
 
-### 🔹 HBase
+###  HBase
 
 * **Modelo:** Columnas
 * **Herramientas:** Apache HBase UI
@@ -131,9 +131,9 @@
 
 ---
 
-## 🕸️ NoSQL — Grafos
+##  NoSQL — Grafos
 
-### 🔹 Neo4j
+###  Neo4j
 
 * **Modelo:** Grafos
 * **Herramientas:** Neo4j Browser, Bloom
@@ -142,7 +142,7 @@
 
 ---
 
-### 🔹 Amazon Neptune
+###  Amazon Neptune
 
 * **Modelo:** Grafo
 * **Usos típicos:**
@@ -150,9 +150,9 @@
 
 ---
 
-## ⏱️ NoSQL — Series de Tiempo
+## ⏱ NoSQL — Series de Tiempo
 
-### 🔹 InfluxDB
+###  InfluxDB
 
 * **Modelo:** Time Series
 * **Herramientas:** Influx UI
@@ -161,7 +161,7 @@
 
 ---
 
-### 🔹 TimescaleDB
+###  TimescaleDB
 
 * **Modelo:** Time Series sobre PostgreSQL
 * **Herramientas:** pgAdmin, Grafana
@@ -170,9 +170,9 @@
 
 ---
 
-## 🔍 NoSQL — Búsqueda / Indexación
+##  NoSQL — Búsqueda / Indexación
 
-### 🔹 Elasticsearch
+###  Elasticsearch
 
 * **Modelo:** Índices distribuidos
 * **Herramientas:** Kibana
@@ -181,7 +181,7 @@
 
 ---
 
-### 🔹 OpenSearch
+###  OpenSearch
 
 * **Modelo:** Search engine
 * **Herramientas:** OpenSearch Dashboards
@@ -190,9 +190,9 @@
 
 ---
 
-## 🧠 BASES DE DATOS ESPECIALES / MODERNAS
+##  BASES DE DATOS ESPECIALES / MODERNAS
 
-### 🔹 Firebase Firestore
+###  Firebase Firestore
 
 * **Modelo:** Documental en tiempo real
 * **Usos típicos:**
@@ -200,7 +200,7 @@
 
 ---
 
-### 🔹 Supabase
+###  Supabase
 
 * **Modelo:** PostgreSQL + servicios
 * **Usos típicos:**
@@ -208,7 +208,7 @@
 
 ---
 
-### 🔹 Snowflake
+###  Snowflake
 
 * **Modelo:** Data Warehouse
 * **Usos típicos:**
@@ -216,7 +216,7 @@
 
 ---
 
-### 🔹 ClickHouse
+###  ClickHouse
 
 * **Modelo:** Columnar analítico
 * **Usos típicos:**
@@ -224,7 +224,7 @@
 
 ---
 
-## 🛠️ HERRAMIENTAS UNIVERSALES (Multi-DB)
+##  HERRAMIENTAS UNIVERSALES (Multi-DB)
 
 Estas trabajan con **SQL y NoSQL**:
 
@@ -235,7 +235,7 @@ Estas trabajan con **SQL y NoSQL**:
 
 ---
 
-## 📌 RESUMEN RÁPIDO DE ELECCIÓN
+##  RESUMEN RÁPIDO DE ELECCIÓN
 
 | Necesidad              | Recomendación          |
 | ---------------------- | ---------------------- |

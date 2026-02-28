@@ -87,9 +87,9 @@ CREATE TABLE course_profiles (
 );
 ```
 
-## 1–N ya visto (courses -> modules) ✅
+## 1–N ya visto (courses -> modules) 
 
-## N–N ya visto (students <-> courses via enrollments) ✅
+## N–N ya visto (students <-> courses via enrollments) 
 
 ---
 
@@ -175,7 +175,7 @@ VALUES ('SQL-01','Intro'), ('SQL-01','SELECT'), ('SQL-01','JOIN');
 
 ## 2FN (si PK compuesta, nada debe depender solo de una parte)
 
-En `enrollments(student_id, course_id)` los atributos `status, final_grade` dependen del par completo ✅
+En `enrollments(student_id, course_id)` los atributos `status, final_grade` dependen del par completo 
 Pero **course_title** depende solo de `course_id` (o `course_code`) → debe vivir en `courses`.
 **student_name/email** dependen solo de `student_id` → deben vivir en `students`.
 

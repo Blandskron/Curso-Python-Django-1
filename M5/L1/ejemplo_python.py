@@ -11,7 +11,7 @@ try:
         connect_timeout=5
     )
 
-    print("✅ Conexión exitosa a PostgreSQL")
+    print(" Conexión exitosa a PostgreSQL")
 
     with conn.cursor(cursor_factory=RealDictCursor) as cursor:
         cursor.execute("SELECT version();")
@@ -19,10 +19,10 @@ try:
         print("PostgreSQL version:", result["version"])
 
 except psycopg2.Error as e:
-    print("❌ Error de conexión:")
+    print(" Error de conexión:")
     print(e)
 
 finally:
     if 'conn' in locals():
         conn.close()
-        print("🔒 Conexión cerrada")
+        print(" Conexión cerrada")
